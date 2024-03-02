@@ -2,6 +2,7 @@
 
 source "https://rubygems.org"
 
+gem 'rackup'
 gem 'sinatra'
 
 group :test do
