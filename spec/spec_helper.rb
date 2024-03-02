@@ -18,7 +18,7 @@ require_relative '../app/server'
 # See https://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 
 def app
-  Sinatra::Application
+  Server
 end
 
 ENV['RACK_ENV'] = 'test'

@@ -1,5 +1,7 @@
 require 'sinatra'
 
-get '/' do
-  'teste'
+class Server < Sinatra::Base
+  get '/' do
+    'teste'
+  end
 end
