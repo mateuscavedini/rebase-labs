@@ -1,0 +1,23 @@
+services:
+  api:
+    build: .
+    volumes:
+      - rubygems:/usr/local/bundle
+    ports:
+      - 4567:4567
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres
+    volumes:
+      - database:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - 5432:5432
+
+volumes:
+  rubygems:
+  database:
