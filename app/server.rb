@@ -1,5 +1,8 @@
+# frozen-string-literal: true
+
 require 'csv'
 require 'sinatra'
+require 'pg'
 
 class Server < Sinatra::Base
   get '/' do
@@ -9,15 +12,12 @@ class Server < Sinatra::Base
   get '/tests' do
     content_type :json
 
-    rows = CSV.read './data/data.csv', col_sep: ';'
+    conn = PG.connect dbname: 'postgres',
+                      host: 'postgres',
+                      port: 5432,
+                      user: 'postgres',
+                      password: 'postgres'
 
-    columns = rows.shift
-
-    rows.map do |row|
-      row.each_with_object({}).with_index do |(cell, acc), idx|
-        column = columns[idx]
-        acc[column] = cell
-      end
-    end.to_json
+    conn.exec('SELECT * FROM exames;').to_a.to_json
   end
 end

@@ -18,9 +18,9 @@ describe 'Rebase Labs API' do
 
       expect(last_response.status).to eq 200
       expect(last_response.content_type).to eq 'application/json'
-      expect(json_body[0]['nome paciente']).to eq 'Emilly Batista Neto'
-      expect(json_body[0]['nome médico']).to eq 'Maria Luiza Pires'
-      expect(json_body[0]['token resultado exame']).to eq 'IQCZ17'
+      expect(json_body[0]['nome_paciente']).to eq 'Emilly Batista Neto'
+      expect(json_body[0]['nome_medico']).to eq 'Maria Luiza Pires'
+      expect(json_body[0]['token_resultado_exame']).to eq 'IQCZ17'
     end
   end
 end
