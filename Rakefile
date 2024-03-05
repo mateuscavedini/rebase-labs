@@ -11,7 +11,9 @@ task :import do
                     user: 'postgres',
                     password: 'postgres'
 
-  puts 'INICIANDO IMPORTAÇÃO'
+  puts '===== PREPARANDO BANCO DE DADOS ====='
+
+  conn.exec 'DROP TABLE IF EXISTS exames'
 
   db_init = <<-SQL
     CREATE TABLE IF NOT EXISTS exames (
@@ -60,9 +62,11 @@ task :import do
     ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16)
   SQL
 
+  puts '===== IMPORTANDO DADOS... ====='
+
   rows.map do |row|
     conn.exec db_insert, row.fields
   end
 
-  puts 'IMPORTAÇÃO FINALIZADA!'
+  puts '===== IMPORTAÇÃO FINALIZADA! ====='
 end
