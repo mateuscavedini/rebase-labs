@@ -1,18 +1,17 @@
 # frozen-string-literal: true
 
 require 'rake'
-require 'pg'
 require 'csv'
 require './app/services/database_service'
 
 namespace :db do
   task :init do
-    puts '===== PREPARANDO BANCO DE DADOS... ====='
+    puts '----> PREPARANDO BANCO DE DADOS...'
 
     conn = DatabaseService.connection
 
     db_init = <<-SQL
-      CREATE TABLE IF NOT EXISTS exames (
+      CREATE TABLE IF NOT EXISTS tests (
         id SERIAL PRIMARY KEY,
         cpf VARCHAR,
         nome_paciente VARCHAR,
@@ -33,10 +32,10 @@ namespace :db do
       )
     SQL
 
-    conn.exec 'DROP TABLE IF EXISTS exames'
+    conn.exec 'DROP TABLE IF EXISTS tests'
     conn.exec db_init
 
-    puts '===== BANCO DE DADOS PRONTO! ====='
+    puts '----> BANCO DE DADOS PRONTO!'
   end
 
   task import: [:init] do
@@ -45,7 +44,7 @@ namespace :db do
     rows = CSV.read './data/data.csv', col_sep: ';', headers: true
 
     db_insert = <<-SQL
-      INSERT INTO exames (
+      INSERT INTO tests (
         cpf,
         nome_paciente,
         email_paciente,
@@ -65,12 +64,12 @@ namespace :db do
       ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16)
     SQL
 
-    puts '===== IMPORTANDO DADOS... ====='
+    puts '----> IMPORTANDO DADOS...'
 
     rows.map do |row|
       conn.exec db_insert, row.fields
     end
 
-    puts '===== IMPORTAÇÃO FINALIZADA! ====='
+    puts '----> IMPORTAÇÃO FINALIZADA!'
   end
 end
