@@ -2,8 +2,7 @@
 
 require 'csv'
 require 'sinatra'
-require 'pg'
-require './app/services/database_service'
+require './app/services/tests_service'
 
 class Server < Sinatra::Base
   get '/' do
@@ -12,9 +11,6 @@ class Server < Sinatra::Base
 
   get '/tests' do
     content_type :json
-
-    conn = DatabaseService.connection
-
-    conn.exec('SELECT * FROM exames;').to_a.to_json
+    TestsService.new.get_all
   end
 end
