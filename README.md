@@ -28,7 +28,7 @@ docker compose up
 3. Importe os dados do arquivo CSV para o banco de dados.
 
 ```shell
-docker exec rebase-labs-api-1 sh -c "rake import"
+docker exec -t rebase-labs-api-1 sh -c "rake import"
 ```
 
 4. Execute os testes.

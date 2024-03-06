@@ -3,6 +3,7 @@
 require 'csv'
 require 'sinatra'
 require 'pg'
+require './app/services/database_service'
 
 class Server < Sinatra::Base
   get '/' do
@@ -12,11 +13,7 @@ class Server < Sinatra::Base
   get '/tests' do
     content_type :json
 
-    conn = PG.connect dbname: 'postgres',
-                      host: 'postgres',
-                      port: 5432,
-                      user: 'postgres',
-                      password: 'postgres'
+    conn = DatabaseService.connection
 
     conn.exec('SELECT * FROM exames;').to_a.to_json
   end
