@@ -8,8 +8,6 @@ services:
       - 4567:4567
     depends_on:
       - postgres
-    networks:
-      - relabs-network
 
   postgres:
     image: postgres
@@ -20,12 +18,8 @@ services:
       POSTGRES_PASSWORD: postgres
     ports:
       - 5432:5432
-    networks:
-      - relabs-network
 
 volumes:
   rubygems:
   database:
 
-networks:
-  relabs-network:
