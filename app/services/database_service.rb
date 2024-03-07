@@ -48,5 +48,7 @@ class DatabaseService
 
     conn.exec 'DROP TABLE IF EXISTS tests'
     conn.exec DB_CREATE_TESTS_TABLE
+
+    conn.close
   end
 end

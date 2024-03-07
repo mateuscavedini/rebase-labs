@@ -11,6 +11,6 @@ class Server < Sinatra::Base
 
   get '/tests' do
     content_type :json
-    TestsService.new.get_all
+    TestsService.new.fetch_all
   end
 end

@@ -46,6 +46,8 @@ namespace :db do
       conn.exec db_insert, row.fields
     end
 
+    conn.close
+
     puts '----> IMPORTAÇÃO FINALIZADA!'
   end
 end

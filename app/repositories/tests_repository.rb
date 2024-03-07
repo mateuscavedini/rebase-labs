@@ -6,6 +6,9 @@ class TestsRepository
   end
 
   def all
-    @conn.exec 'SELECT * FROM tests'
+    result = @conn.exec 'SELECT * FROM tests'
+    @conn.close
+
+    result
   end
 end

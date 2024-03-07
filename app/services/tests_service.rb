@@ -5,7 +5,7 @@ class TestsService
     @repository = repository.new
   end
 
-  def get_all
+  def fetch_all
     @repository.all.to_a.to_json
   end
 end
