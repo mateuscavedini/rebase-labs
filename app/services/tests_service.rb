@@ -8,4 +8,8 @@ class TestsService
   def fetch_all
     @repository.all.to_a.to_json
   end
+
+  def batch_insert(batch)
+    @repository.batch_insert(batch)
+  end
 end
