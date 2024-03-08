@@ -18,7 +18,7 @@ namespace :db do
     puts '----> IMPORTANDO DADOS...'
 
     rows = CSV.read './data/data.csv', col_sep: ';', headers: true
-    TestsService.new.batch_insert rows.map(&:fields)
+    TestsService.new.batch_insert batch: rows.map(&:fields)
 
     puts '----> IMPORTAÇÃO FINALIZADA!'
   end
