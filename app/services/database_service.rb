@@ -30,7 +30,9 @@ class DatabaseService
     )
   SQL
 
-  def self.connection(dbname: 'postgres')
+  def self.connection
+    dbname = ENV['RACK_ENV'].eql?('test') ? 'postgres_test' : 'postgres'
+
     db_config = {
       dbname: dbname
     }.merge BASE_CONFIG
@@ -38,15 +40,15 @@ class DatabaseService
     PG.connect db_config
   end
 
-  def self.setup(dbname: 'postgres')
-    conn = connection dbname: dbname
+  def self.setup
+    conn = connection
 
-    if dbname.eql? 'postgres'
+    unless ENV['RACK_ENV'].eql? 'test'
       conn.exec 'DROP DATABASE IF EXISTS postgres_test'
       conn.exec 'CREATE DATABASE postgres_test'
+      conn.exec 'DROP TABLE IF EXISTS tests'
     end
 
-    conn.exec 'DROP TABLE IF EXISTS tests'
     conn.exec DB_CREATE_TESTS_TABLE
 
     conn.close

@@ -21,8 +21,12 @@ RSpec.configure do |config|
 
   config.shared_context_metadata_behavior = :apply_to_host_groups
 
+  config.before :suite do
+    DatabaseService.setup
+  end
+
   config.before :each do
-    @conn = DatabaseService.connection dbname: 'postgres_test'
+    @conn = DatabaseService.connection
   end
 
   config.after :each do

@@ -10,7 +10,6 @@ namespace :db do
     puts '----> PREPARANDO BANCO DE DADOS...'
 
     DatabaseService.setup
-    DatabaseService.setup dbname: 'postgres_test'
 
     puts '----> BANCO DE DADOS PRONTO!'
   end
