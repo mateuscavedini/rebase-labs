@@ -1,4 +1,3 @@
-require './app/services/database_service'
 require './app/repositories/base_repository'
 
 class TestsRepository < BaseRepository

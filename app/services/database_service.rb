@@ -8,6 +8,18 @@ class DatabaseService
     password: 'postgres'
   }.freeze
 
+  DB_CREATE_PATIENTS_TABLE = <<-SQL.freeze
+    CREATE TABLE IF NOT EXISTS patients (
+      cpf VARCHAR PRIMARY KEY,
+      name VARCHAR NOT NULL,
+      email VARCHAR NOT NULL UNIQUE,
+      birthday DATE NOT NULL,
+      address VARCHAR NOT NULL,
+      city VARCHAR NOT NULL,
+      state VARCHAR NOT NULL
+    );
+  SQL
+
   DB_CREATE_TESTS_TABLE = <<-SQL.freeze
     CREATE TABLE IF NOT EXISTS tests (
       id SERIAL PRIMARY KEY,
@@ -47,8 +59,10 @@ class DatabaseService
       conn.exec 'DROP DATABASE IF EXISTS postgres_test'
       conn.exec 'CREATE DATABASE postgres_test'
       conn.exec 'DROP TABLE IF EXISTS tests'
+      conn.exec 'DROP TABLE IF EXISTS patients'
     end
 
+    conn.exec DB_CREATE_PATIENTS_TABLE
     conn.exec DB_CREATE_TESTS_TABLE
 
     conn.close

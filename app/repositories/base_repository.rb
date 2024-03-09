@@ -17,8 +17,12 @@ class BaseRepository
   def batch_insert(batch:, insert_sql:, close_conn: true)
     @conn.prepare 'prepared_insert', insert_sql
 
-    @conn.transaction do
-      batch.map { |data| @conn.exec_prepared 'prepared_insert', data }
+    begin
+      @conn.transaction do
+        batch.map { |data| @conn.exec_prepared 'prepared_insert', data }
+      end
+    rescue PG::Error
+      puts 'Erro na inserção dos dados! Rolled back!'
     end
 
     @conn.close if close_conn
