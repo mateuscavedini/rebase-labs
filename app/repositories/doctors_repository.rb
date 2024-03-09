@@ -1,3 +1,5 @@
+require './app/repositories/base_repository'
+
 class DoctorsRepository < BaseRepository
   INSERT_SQL = <<-SQL.freeze
     INSERT INTO doctors (crm, crm_state, name, email)
