@@ -1,55 +1,86 @@
 require 'spec_helper'
 require './app/repositories/patients_repository'
+require './app/models/patient'
 
 describe PatientsRepository do
   context '#batch_insert' do
     it 'deve inserir pacientes no banco' do
       repository = PatientsRepository.new conn: @conn
-      pedro = ['139.363.670-51', 'Pedro Godoi Guedes', 'pedro@email.com',
-               '1990-10-25', 'Rua das Palmeiras, 145', 'Rio de Janeiro', 'RJ']
-      daniela = ['763.514.890-75', 'Daniela Larissa da Silva', 'daniela@email.com',
-                 '2005-04-15', 'Rua Dalila da Costa, 43', 'Sumaré', 'SP']
-      bruno = ['499.455.830-26', 'Bruno Ferreira', 'bruno@email.com',
-               '1870-09-18', 'Rua Doutor Lucas Dias, 5', 'Belém', 'PA']
-      batch = [pedro, daniela, bruno]
+      pedro = Patient.new cpf: '139.363.670-51', name: 'Pedro Godoi Guedes',
+                          email: 'pedro@email.com', birthday: '1990-10-25',
+                          address: 'Rua das Palmeiras, 145', city: 'Rio de Janeiro',
+                          state: 'RJ'
+      pedro_values = pedro.attr_values
+      daniela = Patient.new cpf: '763.514.890-75', name: 'Daniela Larissa da Silva',
+                            email: 'daniela@email.com', birthday: '2005-04-15',
+                            address: 'Rua Dalila da Costa, 43', city: 'Sumaré',
+                            state: 'SP'
+      daniela_values = daniela.attr_values
+      bruno = Patient.new cpf: '499.455.830-26', name: 'Bruno Ferreira',
+                          email: 'bruno@email.com', birthday: '1870-09-18',
+                          address: 'Rua Doutor Lucas Dias, 5', city: 'Belém',
+                          state: 'PA'
+      bruno_values = bruno.attr_values
+      batch = [pedro_values, daniela_values, bruno_values]
 
       repository.batch_insert batch: batch, close_conn: false
       result = @conn.exec 'SELECT * FROM patients;'
 
       expect(result.num_tuples).to eq 3
-      expect(result.values[0]).to eq pedro
-      expect(result.values[1]).to eq daniela
-      expect(result.values[2]).to eq bruno
+      expect(result.values[0]).to eq pedro_values
+      expect(result.values[1]).to eq daniela_values
+      expect(result.values[2]).to eq bruno_values
     end
 
     it 'não insere paciente com cpf já registrado' do
       repository = PatientsRepository.new conn: @conn
-      pedro = ['139.363.670-51', 'Pedro Godoi Guedes', 'pedro@email.com',
-               '1990-10-25', 'Rua das Palmeiras, 145', 'Rio de Janeiro', 'RJ']
-      daniela = ['139.363.670-51', 'Daniela Larissa da Silva', 'daniela@email.com',
-                 '2005-04-15', 'Rua Dalila da Costa, 43', 'Sumaré', 'SP']
-      batch = [pedro, daniela]
+      pedro = Patient.new cpf: '139.363.670-51', name: 'Pedro Godoi Guedes',
+                          email: 'pedro@email.com', birthday: '1990-10-25',
+                          address: 'Rua das Palmeiras, 145', city: 'Rio de Janeiro',
+                          state: 'RJ'
+      pedro_values = pedro.attr_values
+      daniela = Patient.new cpf: '139.363.670-51', name: 'Daniela Larissa da Silva',
+                            email: 'daniela@email.com', birthday: '2005-04-15',
+                            address: 'Rua Dalila da Costa, 43', city: 'Sumaré',
+                            state: 'SP'
+      daniela_values = daniela.attr_values
+      bruno = Patient.new cpf: '499.455.830-26', name: 'Bruno Ferreira',
+                          email: 'bruno@email.com', birthday: '1870-09-18',
+                          address: 'Rua Doutor Lucas Dias, 5', city: 'Belém',
+                          state: 'PA'
+      bruno_values = bruno.attr_values
+      batch = [pedro_values, daniela_values, bruno_values]
 
       repository.batch_insert batch: batch, close_conn: false
       result = @conn.exec 'SELECT * FROM patients;'
 
-      expect(result.num_tuples).to eq 1
-      expect(result.values[0]).to eq pedro
-      expect(result.values).not_to include daniela
+      expect(result.num_tuples).to eq 2
+      expect(result.values[0]).to eq pedro_values
+      expect(result.values[1]).to eq bruno_values
+      expect(result.values).not_to include daniela_values
     end
 
     it 'não insere nenhum dado em caso de erro' do
       repository = PatientsRepository.new conn: @conn
-      pedro = ['139.363.670-51', 'Pedro Godoi Guedes', 'pedro@email.com',
-               '1990-10-25', 'Rua das Palmeiras, 145', 'Rio de Janeiro', 'RJ']
-      daniela = ['763.514.890-75', 'Daniela Larissa da Silva', 'daniela@email.com',
-                 '2005-04-15', 'Rua Dalila da Costa, 43', 'Sumaré', 'SP']
-      bruno = ['499.455.830-26', 'Bruno Ferreira', 'bruno@email.com',
-               '1870-09-18', 'Rua Doutor Lucas Dias, 5', 'Belém', 'PA']
-      batch = [pedro, daniela, bruno]
+      pedro = Patient.new cpf: '139.363.670-51', name: 'Pedro Godoi Guedes',
+                          email: 'pedro@email.com', birthday: '1990-10-25',
+                          address: 'Rua das Palmeiras, 145', city: 'Rio de Janeiro',
+                          state: 'RJ'
+      pedro_values = pedro.attr_values
+      daniela = Patient.new cpf: '763.514.890-75', name: 'Daniela Larissa da Silva',
+                            email: 'daniela@email.com', birthday: '2005-04-15',
+                            address: 'Rua Dalila da Costa, 43', city: 'Sumaré',
+                            state: 'SP'
+      daniela_values = daniela.attr_values
+      bruno = Patient.new cpf: '499.455.830-26', name: 'Bruno Ferreira',
+                          email: 'bruno@email.com', birthday: '1870-09-18',
+                          address: 'Rua Doutor Lucas Dias, 5', city: 'Belém',
+                          state: 'PA'
+      bruno_values = bruno.attr_values
+      batch = [pedro_values, daniela_values, bruno_values]
 
       allow(@conn).to receive(:exec_prepared).and_call_original
-      allow(@conn).to receive(:exec_prepared).with('prepared_insert', bruno).and_raise(PG::Error)
+      allow(@conn).to receive(:exec_prepared).with('prepared_insert', bruno_values).and_raise(PG::Error)
       repository.batch_insert batch: batch, close_conn: false
       result = @conn.exec 'SELECT * FROM patients;'
 
