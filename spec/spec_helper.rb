@@ -32,6 +32,7 @@ RSpec.configure do |config|
   config.after :each do
     @conn.exec 'DELETE FROM tests'
     @conn.exec 'DELETE FROM patients'
+    @conn.exec 'DELETE FROM doctors'
     @conn.close
   end
 end

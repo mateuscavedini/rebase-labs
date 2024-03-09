@@ -20,6 +20,16 @@ class DatabaseService
     );
   SQL
 
+  DB_CREATE_DOCTORS_TABLE = <<-SQL.freeze
+    CREATE TABLE IF NOT EXISTS doctors (
+      crm VARCHAR NOT NULL,
+      crm_state VARCHAR NOT NULL,
+      name VARCHAR NOT NULL,
+      email VARCHAR NOT NULL,
+      PRIMARY KEY (crm, crm_state)
+    );
+  SQL
+
   DB_CREATE_TESTS_TABLE = <<-SQL.freeze
     CREATE TABLE IF NOT EXISTS tests (
       id SERIAL PRIMARY KEY,
@@ -59,10 +69,12 @@ class DatabaseService
       conn.exec 'DROP DATABASE IF EXISTS postgres_test'
       conn.exec 'CREATE DATABASE postgres_test'
       conn.exec 'DROP TABLE IF EXISTS tests'
+      conn.exec 'DROP TABLE IF EXISTS doctors'
       conn.exec 'DROP TABLE IF EXISTS patients'
     end
 
     conn.exec DB_CREATE_PATIENTS_TABLE
+    conn.exec DB_CREATE_DOCTORS_TABLE
     conn.exec DB_CREATE_TESTS_TABLE
 
     conn.close
