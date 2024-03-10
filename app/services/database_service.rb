@@ -30,6 +30,19 @@ class DatabaseService
     );
   SQL
 
+  DB_CREATE_EXAMS_TABLE = <<-SQL.freeze
+    CREATE TABLE IF NOT EXISTS exams (
+      token VARCHAR PRIMARY KEY,
+      date DATE,
+      patient_cpf VARCHAR,
+      doctor_crm VARCHAR,
+      doctor_crm_state VARCHAR,
+      FOREIGN KEY (patient_cpf) REFERENCES patients (cpf),
+      FOREIGN KEY (doctor_crm, doctor_crm_state) REFERENCES doctors (crm, crm_state)
+    );
+  SQL
+
+
   DB_CREATE_TESTS_TABLE = <<-SQL.freeze
     CREATE TABLE IF NOT EXISTS tests (
       id SERIAL PRIMARY KEY,
@@ -69,12 +82,14 @@ class DatabaseService
       conn.exec 'DROP DATABASE IF EXISTS postgres_test'
       conn.exec 'CREATE DATABASE postgres_test'
       conn.exec 'DROP TABLE IF EXISTS tests'
+      conn.exec 'DROP TABLE IF EXISTS exams'
       conn.exec 'DROP TABLE IF EXISTS doctors'
       conn.exec 'DROP TABLE IF EXISTS patients'
     end
 
     conn.exec DB_CREATE_PATIENTS_TABLE
     conn.exec DB_CREATE_DOCTORS_TABLE
+    conn.exec DB_CREATE_EXAMS_TABLE
     conn.exec DB_CREATE_TESTS_TABLE
 
     conn.close
