@@ -62,7 +62,7 @@ describe DoctorsRepository do
       batch = [ana_values, pedro_values, joao_values]
 
       allow(@conn).to receive(:exec_prepared).and_call_original
-      allow(@conn).to receive(:exec_prepared).with('prepared_insert', joao_values).and_raise(PG::Error)
+      allow(@conn).to receive(:exec_prepared).with('prepared_doctors_insert', joao_values).and_raise(PG::Error)
       repository.batch_insert batch: batch, close_conn: false
       result = @conn.exec 'SELECT * FROM doctors;'
 
