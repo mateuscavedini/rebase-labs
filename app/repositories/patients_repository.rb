@@ -1,3 +1,5 @@
+require './app/repositories/base_repository'
+
 class PatientsRepository < BaseRepository
   INSERT_SQL = <<-SQL.freeze
     INSERT INTO patients (cpf, name, email, birthday, address, city, state)
