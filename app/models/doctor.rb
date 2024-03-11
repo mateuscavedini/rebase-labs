@@ -12,4 +12,9 @@ class Doctor
     @name = name
     @email = email
   end
+
+  def self.new_from_row(row)
+    new name: row['nome médico'], email: row['email médico'],
+        crm: row['crm médico'], crm_state: row['crm médico estado']
+  end
 end
