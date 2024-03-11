@@ -15,4 +15,10 @@ class Patient
     @city = city
     @state = state
   end
+
+  def self.new_from_row(row)
+    new cpf: row['cpf'], name: row['nome paciente'], email: row['email paciente'],
+        birthday: row['data nascimento paciente'], address: row['endereço/rua paciente'],
+        city: row['cidade paciente'], state: row['estado paciente']
+  end
 end
