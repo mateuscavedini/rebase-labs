@@ -13,4 +13,9 @@ class Test
     @result = result
     @exam_token = exam_token
   end
+
+  def self.new_from_row(row)
+    new type: row['tipo exame'], limits: row['limites tipo exame'],
+        result: row['resultado tipo exame'], exam_token: row['token resultado exame']
+  end
 end

@@ -10,6 +10,7 @@ class TestsService
   end
 
   def batch_insert(batch:, close_conn: true)
-    @repository.batch_insert(batch: batch, close_conn: close_conn)
+    values = batch.map { |obj| obj.attr_values[1..] }
+    @repository.batch_insert batch: values, close_conn: close_conn
   end
 end

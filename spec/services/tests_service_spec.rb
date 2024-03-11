@@ -8,11 +8,13 @@ describe TestsService do
       repository_spy = spy TestsRepository
       allow(TestsRepository).to receive(:new).and_return(repository_spy)
       service = TestsService.new conn: @conn
-      batch = [%w[data_1 data_2], %w[data_3 data_4]]
+      first_test = Test.new type: 'hemácias', limits: '42-60', result: '53', exam_token: 'ANY954'
+      second_test = Test.new type: 'leucócitos', limits: '13-40', result: '32', exam_token: 'ANY547'
+      expected_batch = [first_test.attr_values[1..], second_test.attr_values[1..]]
 
-      service.batch_insert batch: batch, close_conn: false
+      service.batch_insert batch: [first_test, second_test], close_conn: false
 
-      expect(repository_spy).to have_received(:batch_insert).with(batch: batch, close_conn: false).once
+      expect(repository_spy).to have_received(:batch_insert).with(batch: expected_batch, close_conn: false).once
     end
   end
 end
