@@ -6,14 +6,6 @@ class BaseRepository
     @conn = conn || database.connection
   end
 
-  def all(close_conn: true)
-    result = @conn.exec "SELECT * FROM #{@table_name}"
-
-    @conn.close if close_conn
-
-    result
-  end
-
   def batch_insert(batch:, insert_sql:, close_conn: true)
     @conn.prepare "prepared_#{@table_name}_insert", insert_sql
 
