@@ -2,15 +2,15 @@
 
 require 'csv'
 require 'sinatra'
-require './app/services/tests_service'
+require './app/services/exams_service'
 
 class Server < Sinatra::Base
   get '/' do
     'Server rodando!'
   end
 
-  get '/tests' do
+  get '/exams' do
     content_type :json
-    TestsService.new.fetch_all
+    ExamsService.new.fetch_all
   end
 end
