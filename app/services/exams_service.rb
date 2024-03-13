@@ -11,8 +11,7 @@ class ExamsService
         token: row['token'],
         date: row['date'],
         patient: JSON.parse(row['patient']),
-        doctor: JSON.parse(row['doctor']),
-        tests: JSON.parse(row['tests'])
+        doctor: JSON.parse(row['doctor'])
       }
     end.to_json
   end
