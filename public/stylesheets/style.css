@@ -1,0 +1,23 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+table {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 0.75rem 1rem;
+  text-align: left;
+}
+
+th {
+  text-align: center;
+}
