@@ -11,6 +11,11 @@ class Server < Sinatra::Base
     'Server rodando!'
   end
 
+  get '/exams/:token' do
+    content_type :json
+    ExamsService.new.fetch_by_token token: params['token']
+  end
+
   get '/exams' do
     content_type :json
     ExamsService.new.fetch_all
@@ -18,7 +23,6 @@ class Server < Sinatra::Base
 
   get '/' do
     content_type 'text/html'
-
     File.open(File.join('public', 'index.html'))
   end
 end
