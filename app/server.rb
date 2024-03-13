@@ -5,12 +5,20 @@ require 'sinatra'
 require './app/services/exams_service'
 
 class Server < Sinatra::Base
-  get '/' do
+  set :public_folder, File.dirname(__FILE__) + '/../public'
+
+  get '/hello' do
     'Server rodando!'
   end
 
   get '/exams' do
     content_type :json
     ExamsService.new.fetch_all
+  end
+
+  get '/' do
+    content_type 'text/html'
+
+    File.open(File.join('public', 'index.html'))
   end
 end

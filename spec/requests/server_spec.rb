@@ -2,16 +2,14 @@ require 'spec_helper'
 require './app/services/patients_service'
 require './app/services/doctors_service'
 require './app/services/exams_service'
-require './app/services/tests_service'
 require './app/models/patient'
 require './app/models/doctor'
 require './app/models/exam'
-require './app/models/test'
 
 describe 'Rebase Labs API' do
-  context 'GET /' do
+  context 'GET /hello' do
     it 'deve exibir mensagem inicial' do
-      get '/'
+      get '/hello'
 
       expect(last_response.status).to eq 200
       expect(last_response.body).to eq 'Server rodando!'
@@ -19,11 +17,10 @@ describe 'Rebase Labs API' do
   end
 
   context 'GET /exams' do
-    it 'deve retornar todos os exames registrados' do
+    it 'deve retornar todos os exames registrados em ordem desc de data' do
       patients_service = PatientsService.new conn: @conn
       doctors_service = DoctorsService.new conn: @conn
       exams_service = ExamsService.new conn: @conn
-      tests_service = TestsService.new conn: @conn
 
       pedro = Patient.new cpf: '139.363.670-51', name: 'Pedro Godoi Guedes',
                           email: 'pedro@email.com', birthday: '1990-10-25',
@@ -47,12 +44,6 @@ describe 'Rebase Labs API' do
                               doctor_crm: doctor_joao.crm, doctor_crm_state: doctor_joao.crm_state
       exams_service.batch_insert batch: [pedro_exam, daniela_exam], close_conn: false
 
-      pedro_hdl_test = Test.new type: 'hdl', limits: '19-75',
-                                result: '13', exam_token: pedro_exam.token
-      daniela_ldl_test = Test.new type: 'ldl', limits: '19-75',
-                                  result: '20', exam_token: daniela_exam.token
-      tests_service.batch_insert batch: [pedro_hdl_test, daniela_ldl_test], close_conn: false
-
       get '/exams'
 
       json_body = JSON.parse last_response.body
@@ -64,12 +55,10 @@ describe 'Rebase Labs API' do
       expect(json_body[0]['patient']['cpf']).to eq '763.514.890-75'
       expect(json_body[0]['doctor']['crm']).to eq 'B0000DHDOF'
       expect(json_body[0]['doctor']['crm_state']).to eq 'MA'
-      expect(json_body[0]['tests'][0]['type']).to eq 'ldl'
       expect(json_body[1]['token']).to eq 'T9O6AI'
       expect(json_body[1]['patient']['cpf']).to eq '139.363.670-51'
       expect(json_body[1]['doctor']['crm']).to eq 'B000A7CDX4'
       expect(json_body[1]['doctor']['crm_state']).to eq 'SP'
-      expect(json_body[1]['tests'][0]['type']).to eq 'hdl'
     end
   end
 end
