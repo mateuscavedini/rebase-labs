@@ -2,9 +2,11 @@ require 'spec_helper'
 require './app/repositories/exams_repository'
 require './app/repositories/patients_repository'
 require './app/repositories/doctors_repository'
+require './app/repositories/tests_repository'
 require './app/models/patient'
 require './app/models/doctor'
 require './app/models/exam'
+require './app/models/test'
 
 describe ExamsRepository do
   context '#batch_insert' do
@@ -225,6 +227,54 @@ describe ExamsRepository do
 
       expect(result.num_tuples).to eq 0
       expect(result.values).to be_empty
+    end
+  end
+
+  context '#fetch_by_token' do
+    it 'retorna detalhes de um exame' do
+      patients_repository = PatientsRepository.new conn: @conn
+      doctors_repository = DoctorsRepository.new conn: @conn
+      exams_repository = ExamsRepository.new conn: @conn
+      tests_repository = TestsRepository.new conn: @conn
+
+      pedro = Patient.new cpf: '139.363.670-51', name: 'Pedro Godoi Guedes',
+                          email: 'pedro@email.com', birthday: '1990-10-25',
+                          address: 'Rua das Palmeiras, 145', city: 'Rio de Janeiro',
+                          state: 'RJ'
+      daniela = Patient.new cpf: '763.514.890-75', name: 'Daniela Larissa da Silva',
+                            email: 'daniela@email.com', birthday: '2005-04-15',
+                            address: 'Rua Dalila da Costa, 43', city: 'Sumaré',
+                            state: 'SP'
+      patients_repository.batch_insert batch: [pedro.attr_values, daniela.attr_values], close_conn: false
+
+      doctor_ana = Doctor.new crm: 'B000A7CDX4', crm_state: 'SP',
+                              name: 'Ana da Silva', email: 'ana@email.com'
+      doctor_joao = Doctor.new crm: 'B0000DHDOF', crm_state: 'MA',
+                               name: 'João Lima', email: 'joao@email.com'
+      doctors_repository.batch_insert batch: [doctor_ana.attr_values, doctor_joao.attr_values], close_conn: false
+
+      pedro_exam = Exam.new token: 'T9O6AI', date: '2021-08-05', patient_cpf: pedro.cpf,
+                            doctor_crm: doctor_ana.crm, doctor_crm_state: doctor_ana.crm_state
+      daniela_exam = Exam.new token: '0W9I67', date: '2021-11-21', patient_cpf: daniela.cpf,
+                              doctor_crm: doctor_joao.crm, doctor_crm_state: doctor_joao.crm_state
+      exams_repository.batch_insert batch: [pedro_exam.attr_values, daniela_exam.attr_values], close_conn: false
+
+      pedro_test_hdl = Test.new type: 'hdl', limits: '10-50', result: '43', exam_token: pedro_exam.token
+      pedro_test_ldl = Test.new type: 'ldl', limits: '30-40', result: '23', exam_token: pedro_exam.token
+      daniela_test_hdl = Test.new type: 'hdl', limits: '10-50', result: '50', exam_token: daniela_exam.token
+      tests_repository.batch_insert batch: [pedro_test_hdl.attr_values[1..], pedro_test_ldl.attr_values[1..],
+                                            daniela_test_hdl.attr_values[1..]],
+                                    close_conn: false
+
+      result = exams_repository.fetch_by_token token: 'T9O6AI', close_conn: false
+
+      expect(result.num_tuples).to eq 1
+      expect(result.values[0][0]).to eq 'T9O6AI'
+      expect(result.values[0][1]).to eq '2021-08-05'
+      expect(result.values[0][2]).to eq '{"name" : "Pedro Godoi Guedes", "cpf" : "139.363.670-51"}'
+      expect(result.values[0][3]).to eq '{"name" : "Ana da Silva", "crm" : "B000A7CDX4", "crm_state" : "SP"}'
+      expect(result.values[0][4]).to eq '[{"type" : "hdl", "limits" : "10-50", "result" : "43"}, {"type" : "ldl", "limits" : "30-40", "result" : "23"}]'
+      expect(result.values[0][4]).not_to include '{"type" : "hdl", "limits" : "10-50", "result" : "50"}'
     end
   end
 end

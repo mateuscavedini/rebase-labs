@@ -3,9 +3,11 @@ require './app/services/exams_service'
 require './app/repositories/exams_repository'
 require './app/repositories/patients_repository'
 require './app/repositories/doctors_repository'
+require './app/repositories/tests_repository'
 require './app/models/patient'
 require './app/models/doctor'
 require './app/models/exam'
+require './app/models/test'
 
 describe ExamsService do
   context '#batch_insert' do
@@ -65,6 +67,55 @@ describe ExamsService do
       expect(result_json[1]['token']).to eq 'T9O6AI'
       expect(result_json[1]['patient']['name']).to eq 'Pedro Godoi Guedes'
       expect(result_json[1]['doctor']['name']).to eq 'Ana da Silva'
+    end
+  end
+
+  context '#fetch_by_token' do
+    it 'retorna json com detalhes de exame' do
+      exams_service = ExamsService.new conn: @conn
+      patients_repository = PatientsRepository.new conn: @conn
+      doctors_repository = DoctorsRepository.new conn: @conn
+      tests_repository = TestsRepository.new conn: @conn
+
+      pedro = Patient.new cpf: '139.363.670-51', name: 'Pedro Godoi Guedes',
+                          email: 'pedro@email.com', birthday: '1990-10-25',
+                          address: 'Rua das Palmeiras, 145', city: 'Rio de Janeiro',
+                          state: 'RJ'
+      daniela = Patient.new cpf: '763.514.890-75', name: 'Daniela Larissa da Silva',
+                            email: 'daniela@email.com', birthday: '2005-04-15',
+                            address: 'Rua Dalila da Costa, 43', city: 'Sumaré',
+                            state: 'SP'
+      patients_repository.batch_insert batch: [pedro.attr_values, daniela.attr_values], close_conn: false
+
+      doctor_ana = Doctor.new crm: 'B000A7CDX4', crm_state: 'SP',
+                              name: 'Ana da Silva', email: 'ana@email.com'
+      doctor_joao = Doctor.new crm: 'B0000DHDOF', crm_state: 'MA',
+                               name: 'João Lima', email: 'joao@email.com'
+      doctors_repository.batch_insert batch: [doctor_ana.attr_values, doctor_joao.attr_values], close_conn: false
+
+      pedro_exam = Exam.new token: 'T9O6AI', date: '2021-08-05', patient_cpf: pedro.cpf,
+                            doctor_crm: doctor_ana.crm, doctor_crm_state: doctor_ana.crm_state
+      daniela_exam = Exam.new token: '0W9I67', date: '2021-11-21', patient_cpf: daniela.cpf,
+                              doctor_crm: doctor_joao.crm, doctor_crm_state: doctor_joao.crm_state
+      exams_service.batch_insert batch: [pedro_exam, daniela_exam], close_conn: false
+
+      pedro_test_hdl = Test.new type: 'hdl', limits: '10-50', result: '43', exam_token: pedro_exam.token
+      pedro_test_ldl = Test.new type: 'ldl', limits: '30-40', result: '23', exam_token: pedro_exam.token
+      daniela_test_hdl = Test.new type: 'hdl', limits: '10-50', result: '50', exam_token: daniela_exam.token
+      tests_repository.batch_insert batch: [pedro_test_hdl.attr_values[1..], pedro_test_ldl.attr_values[1..],
+                                            daniela_test_hdl.attr_values[1..]],
+                                    close_conn: false
+
+      result = exams_service.fetch_by_token token: 'T9O6AI', close_conn: false
+      result_json = JSON.parse result
+
+      expect(result_json['token']).to eq 'T9O6AI'
+      expect(result_json['date']).to eq '2021-08-05'
+      expect(result_json['patient']['name']).to eq 'Pedro Godoi Guedes'
+      expect(result_json['doctor']['name']).to eq 'Ana da Silva'
+      expect(result_json['tests'].size).to eq 2
+      expect(result_json['tests'][0]['type']).to eq 'hdl'
+      expect(result_json['tests'][1]['type']).to eq 'ldl'
     end
   end
 end
