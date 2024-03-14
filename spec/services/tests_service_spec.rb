@@ -10,7 +10,7 @@ describe TestsService do
       service = TestsService.new conn: @conn
       first_test = Test.new type: 'hemácias', limits: '42-60', result: '53', exam_token: 'ANY954'
       second_test = Test.new type: 'leucócitos', limits: '13-40', result: '32', exam_token: 'ANY547'
-      expected_batch = [first_test.attr_values[1..], second_test.attr_values[1..]]
+      expected_batch = [first_test.attr_values, second_test.attr_values]
 
       service.batch_insert batch: [first_test, second_test], close_conn: false
 

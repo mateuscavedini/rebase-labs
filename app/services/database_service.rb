@@ -44,11 +44,11 @@ class DatabaseService
 
   DB_CREATE_TESTS_TABLE = <<-SQL.freeze
     CREATE TABLE IF NOT EXISTS tests (
-      id SERIAL PRIMARY KEY,
       type VARCHAR,
       limits VARCHAR,
       result VARCHAR,
       exam_token VARCHAR,
+      PRIMARY KEY (type, exam_token),
       FOREIGN KEY (exam_token) REFERENCES exams (token)
     );
   SQL

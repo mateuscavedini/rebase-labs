@@ -25,22 +25,22 @@ describe TestsRepository do
       ExamsRepository.new(conn: @conn).batch_insert batch: [exam.attr_values], close_conn: false
       red_cells_test = Test.new type: 'hemácias', limits: '45-52',
                                 result: '97', exam_token: exam.token
-      red_cells_test_values = red_cells_test.attr_values[1..]
+      red_cells_test_values = red_cells_test.attr_values
       hdl_test = Test.new type: 'hdl', limits: '19-75',
                           result: '13', exam_token: exam.token
-      hdl_test_values = hdl_test.attr_values[1..]
+      hdl_test_values = hdl_test.attr_values
       ldl_test = Test.new type: 'ldl', limits: '45-54',
                           result: '80', exam_token: exam.token
-      ldl_test_values = ldl_test.attr_values[1..]
+      ldl_test_values = ldl_test.attr_values
       batch = [red_cells_test_values, hdl_test_values, ldl_test_values]
 
       tests_repository.batch_insert batch: batch, close_conn: false
       result = @conn.exec 'SELECT * FROM tests;'
 
       expect(result.num_tuples).to eq 3
-      expect(result.values[0][1..]).to eq red_cells_test_values
-      expect(result.values[1][1..]).to eq hdl_test_values
-      expect(result.values[2][1..]).to eq ldl_test_values
+      expect(result.values[0]).to eq red_cells_test_values
+      expect(result.values[1]).to eq hdl_test_values
+      expect(result.values[2]).to eq ldl_test_values
     end
 
     it 'não deve inserir nenhum teste no caso de erro' do
@@ -58,13 +58,13 @@ describe TestsRepository do
       ExamsRepository.new(conn: @conn).batch_insert batch: [exam.attr_values], close_conn: false
       red_cells_test = Test.new type: 'hemácias', limits: '45-52',
                                 result: '97', exam_token: exam.token
-      red_cells_test_values = red_cells_test.attr_values[1..]
+      red_cells_test_values = red_cells_test.attr_values
       hdl_test = Test.new type: 'hdl', limits: '19-75',
                           result: '13', exam_token: exam.token
-      hdl_test_values = hdl_test.attr_values[1..]
+      hdl_test_values = hdl_test.attr_values
       ldl_test = Test.new type: 'ldl', limits: '45-54',
                           result: '80', exam_token: exam.token
-      ldl_test_values = ldl_test.attr_values[1..]
+      ldl_test_values = ldl_test.attr_values
       batch = [red_cells_test_values, hdl_test_values, ldl_test_values]
 
       allow(@conn).to receive(:exec_prepared).and_call_original

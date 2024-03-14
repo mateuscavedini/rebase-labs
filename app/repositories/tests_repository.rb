@@ -3,7 +3,8 @@ require './app/repositories/base_repository'
 class TestsRepository < BaseRepository
   INSERT_SQL = <<-SQL.freeze
     INSERT INTO tests (type, limits, result, exam_token)
-    VALUES ($1, $2, $3, $4);
+    VALUES ($1, $2, $3, $4)
+    ON CONFLICT (type, exam_token) DO NOTHING;
   SQL
 
   def initialize(conn: nil)

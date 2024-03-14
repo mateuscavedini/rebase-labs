@@ -3,11 +3,10 @@ require './app/modules/model_methods'
 class Test
   include ModelMethods
 
-  attr_reader :exam_token
-  attr_accessor :id, :type, :limits, :result
+  attr_reader :exam_token, :type
+  attr_accessor :limits, :result
 
   def initialize(type:, limits:, result:, exam_token:)
-    @id = id
     @type = type
     @limits = limits
     @result = result

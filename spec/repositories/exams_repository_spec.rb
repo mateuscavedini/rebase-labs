@@ -262,8 +262,8 @@ describe ExamsRepository do
       pedro_test_hdl = Test.new type: 'hdl', limits: '10-50', result: '43', exam_token: pedro_exam.token
       pedro_test_ldl = Test.new type: 'ldl', limits: '30-40', result: '23', exam_token: pedro_exam.token
       daniela_test_hdl = Test.new type: 'hdl', limits: '10-50', result: '50', exam_token: daniela_exam.token
-      tests_repository.batch_insert batch: [pedro_test_hdl.attr_values[1..], pedro_test_ldl.attr_values[1..],
-                                            daniela_test_hdl.attr_values[1..]],
+      tests_repository.batch_insert batch: [pedro_test_hdl.attr_values, pedro_test_ldl.attr_values,
+                                            daniela_test_hdl.attr_values],
                                     close_conn: false
 
       result = exams_repository.fetch_by_token token: 'T9O6AI', close_conn: false
