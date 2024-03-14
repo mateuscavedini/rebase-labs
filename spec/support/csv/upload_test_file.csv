@@ -1,0 +1,131 @@
+cpf;nome paciente;email paciente;data nascimento paciente;endereço/rua paciente;cidade paciente;estado paciente;crm médico;crm médico estado;nome médico;email médico;token resultado exame;data exame;tipo exame;limites tipo exame;resultado tipo exame
+711.706.040-99;Diego Silva Dias;diego@silva.com;1974-02-09;Avenida Araucária, 780;Curitiba;Paraná;B000VPPS7C;PA;Tânia Rocha Pinto;tania@rocha.com;B15O5F;2023-03-03;hemácias;45-52;48
+711.706.040-99;Diego Silva Dias;diego@silva.com;1974-02-09;Avenida Araucária, 780;Curitiba;Paraná;B000VPPS7C;PA;Tânia Rocha Pinto;tania@rocha.com;B15O5F;2023-03-03;leucócitos;9-61;89
+711.706.040-99;Diego Silva Dias;diego@silva.com;1974-02-09;Avenida Araucária, 780;Curitiba;Paraná;B000VPPS7C;PA;Tânia Rocha Pinto;tania@rocha.com;B15O5F;2023-03-03;plaquetas;11-93;97
+711.706.040-99;Diego Silva Dias;diego@silva.com;1974-02-09;Avenida Araucária, 780;Curitiba;Paraná;B000VPPS7C;PA;Tânia Rocha Pinto;tania@rocha.com;B15O5F;2023-03-03;hdl;19-75;0
+711.706.040-99;Diego Silva Dias;diego@silva.com;1974-02-09;Avenida Araucária, 780;Curitiba;Paraná;B000VPPS7C;PA;Tânia Rocha Pinto;tania@rocha.com;B15O5F;2023-03-03;ldl;45-54;80
+711.706.040-99;Diego Silva Dias;diego@silva.com;1974-02-09;Avenida Araucária, 780;Curitiba;Paraná;B000VPPS7C;PA;Tânia Rocha Pinto;tania@rocha.com;B15O5F;2023-03-03;vldl;48-72;82
+711.706.040-99;Diego Silva Dias;diego@silva.com;1974-02-09;Avenida Araucária, 780;Curitiba;Paraná;B000VPPS7C;PA;Tânia Rocha Pinto;tania@rocha.com;B15O5F;2023-03-03;glicemia;25-83;98
+711.706.040-99;Diego Silva Dias;diego@silva.com;1974-02-09;Avenida Araucária, 780;Curitiba;Paraná;B000VPPS7C;PA;Tânia Rocha Pinto;tania@rocha.com;B15O5F;2023-03-03;tgo;50-84;87
+711.706.040-99;Diego Silva Dias;diego@silva.com;1974-02-09;Avenida Araucária, 780;Curitiba;Paraná;B000VPPS7C;PA;Tânia Rocha Pinto;tania@rocha.com;B15O5F;2023-03-03;tgp;38-63;9
+711.706.040-99;Diego Silva Dias;diego@silva.com;1974-02-09;Avenida Araucária, 780;Curitiba;Paraná;B000VPPS7C;PA;Tânia Rocha Pinto;tania@rocha.com;B15O5F;2023-03-03;eletrólitos;2-68;85
+711.706.040-99;Diego Silva Dias;diego@silva.com;1974-02-09;Avenida Araucária, 780;Curitiba;Paraná;B000VPPS7C;PA;Tânia Rocha Pinto;tania@rocha.com;B15O5F;2023-03-03;tsh;25-80;65
+711.706.040-99;Diego Silva Dias;diego@silva.com;1974-02-09;Avenida Araucária, 780;Curitiba;Paraná;B000VPPS7C;PA;Tânia Rocha Pinto;tania@rocha.com;B15O5F;2023-03-03;t4-livre;34-60;94
+711.706.040-99;Diego Silva Dias;diego@silva.com;1974-02-09;Avenida Araucária, 780;Curitiba;Paraná;B000VPPS7C;PA;Tânia Rocha Pinto;tania@rocha.com;B15O5F;2023-03-03;ácido úrico;15-61;2
+255.162.610-23;Leonardo Lima Costa;leonardo@lima.com;1976-02-14;Rua Barbosa Vilas Boas, 251;Campinas;São Paulo;B000VA4D7U;SP;Vitor Ribeiro Correia;vitor@ribeiro.com;N50GQ2;2023-04-20;hemácias;45-52;80
+255.162.610-23;Leonardo Lima Costa;leonardo@lima.com;1976-02-14;Rua Barbosa Vilas Boas, 251;Campinas;São Paulo;B000VA4D7U;SP;Vitor Ribeiro Correia;vitor@ribeiro.com;N50GQ2;2023-04-20;leucócitos;9-61;91
+255.162.610-23;Leonardo Lima Costa;leonardo@lima.com;1976-02-14;Rua Barbosa Vilas Boas, 251;Campinas;São Paulo;B000VA4D7U;SP;Vitor Ribeiro Correia;vitor@ribeiro.com;N50GQ2;2023-04-20;plaquetas;11-93;18
+255.162.610-23;Leonardo Lima Costa;leonardo@lima.com;1976-02-14;Rua Barbosa Vilas Boas, 251;Campinas;São Paulo;B000VA4D7U;SP;Vitor Ribeiro Correia;vitor@ribeiro.com;N50GQ2;2023-04-20;hdl;19-75;74
+255.162.610-23;Leonardo Lima Costa;leonardo@lima.com;1976-02-14;Rua Barbosa Vilas Boas, 251;Campinas;São Paulo;B000VA4D7U;SP;Vitor Ribeiro Correia;vitor@ribeiro.com;N50GQ2;2023-04-20;ldl;45-54;66
+255.162.610-23;Leonardo Lima Costa;leonardo@lima.com;1976-02-14;Rua Barbosa Vilas Boas, 251;Campinas;São Paulo;B000VA4D7U;SP;Vitor Ribeiro Correia;vitor@ribeiro.com;N50GQ2;2023-04-20;vldl;48-72;41
+255.162.610-23;Leonardo Lima Costa;leonardo@lima.com;1976-02-14;Rua Barbosa Vilas Boas, 251;Campinas;São Paulo;B000VA4D7U;SP;Vitor Ribeiro Correia;vitor@ribeiro.com;N50GQ2;2023-04-20;glicemia;25-83;6
+255.162.610-23;Leonardo Lima Costa;leonardo@lima.com;1976-02-14;Rua Barbosa Vilas Boas, 251;Campinas;São Paulo;B000VA4D7U;SP;Vitor Ribeiro Correia;vitor@ribeiro.com;N50GQ2;2023-04-20;tgo;50-84;32
+255.162.610-23;Leonardo Lima Costa;leonardo@lima.com;1976-02-14;Rua Barbosa Vilas Boas, 251;Campinas;São Paulo;B000VA4D7U;SP;Vitor Ribeiro Correia;vitor@ribeiro.com;N50GQ2;2023-04-20;tgp;38-63;16
+255.162.610-23;Leonardo Lima Costa;leonardo@lima.com;1976-02-14;Rua Barbosa Vilas Boas, 251;Campinas;São Paulo;B000VA4D7U;SP;Vitor Ribeiro Correia;vitor@ribeiro.com;N50GQ2;2023-04-20;eletrólitos;2-68;61
+255.162.610-23;Leonardo Lima Costa;leonardo@lima.com;1976-02-14;Rua Barbosa Vilas Boas, 251;Campinas;São Paulo;B000VA4D7U;SP;Vitor Ribeiro Correia;vitor@ribeiro.com;N50GQ2;2023-04-20;tsh;25-80;13
+255.162.610-23;Leonardo Lima Costa;leonardo@lima.com;1976-02-14;Rua Barbosa Vilas Boas, 251;Campinas;São Paulo;B000VA4D7U;SP;Vitor Ribeiro Correia;vitor@ribeiro.com;N50GQ2;2023-04-20;t4-livre;34-60;9
+255.162.610-23;Leonardo Lima Costa;leonardo@lima.com;1976-02-14;Rua Barbosa Vilas Boas, 251;Campinas;São Paulo;B000VA4D7U;SP;Vitor Ribeiro Correia;vitor@ribeiro.com;N50GQ2;2023-04-20;ácido úrico;15-61;78
+482.928.940-63;Emilly Pinto Melo;emilly@pinto.com;1978-01-22;Avenida General San Martin, 1449;São Paulo;São Paulo;B000LXRJQ6;SP;Beatriz Santos Azevedo;beatriz@santos.com;IN2F0A;2023-05-16;hemácias;45-52;65
+482.928.940-63;Emilly Pinto Melo;emilly@pinto.com;1978-01-22;Avenida General San Martin, 1449;São Paulo;São Paulo;B000LXRJQ6;SP;Beatriz Santos Azevedo;beatriz@santos.com;IN2F0A;2023-05-16;leucócitos;9-61;75
+482.928.940-63;Emilly Pinto Melo;emilly@pinto.com;1978-01-22;Avenida General San Martin, 1449;São Paulo;São Paulo;B000LXRJQ6;SP;Beatriz Santos Azevedo;beatriz@santos.com;IN2F0A;2023-05-16;plaquetas;11-93;67
+482.928.940-63;Emilly Pinto Melo;emilly@pinto.com;1978-01-22;Avenida General San Martin, 1449;São Paulo;São Paulo;B000LXRJQ6;SP;Beatriz Santos Azevedo;beatriz@santos.com;IN2F0A;2023-05-16;hdl;19-75;3
+482.928.940-63;Emilly Pinto Melo;emilly@pinto.com;1978-01-22;Avenida General San Martin, 1449;São Paulo;São Paulo;B000LXRJQ6;SP;Beatriz Santos Azevedo;beatriz@santos.com;IN2F0A;2023-05-16;ldl;45-54;27
+482.928.940-63;Emilly Pinto Melo;emilly@pinto.com;1978-01-22;Avenida General San Martin, 1449;São Paulo;São Paulo;B000LXRJQ6;SP;Beatriz Santos Azevedo;beatriz@santos.com;IN2F0A;2023-05-16;vldl;48-72;27
+482.928.940-63;Emilly Pinto Melo;emilly@pinto.com;1978-01-22;Avenida General San Martin, 1449;São Paulo;São Paulo;B000LXRJQ6;SP;Beatriz Santos Azevedo;beatriz@santos.com;IN2F0A;2023-05-16;glicemia;25-83;78
+482.928.940-63;Emilly Pinto Melo;emilly@pinto.com;1978-01-22;Avenida General San Martin, 1449;São Paulo;São Paulo;B000LXRJQ6;SP;Beatriz Santos Azevedo;beatriz@santos.com;IN2F0A;2023-05-16;tgo;50-84;15
+482.928.940-63;Emilly Pinto Melo;emilly@pinto.com;1978-01-22;Avenida General San Martin, 1449;São Paulo;São Paulo;B000LXRJQ6;SP;Beatriz Santos Azevedo;beatriz@santos.com;IN2F0A;2023-05-16;tgp;38-63;34
+482.928.940-63;Emilly Pinto Melo;emilly@pinto.com;1978-01-22;Avenida General San Martin, 1449;São Paulo;São Paulo;B000LXRJQ6;SP;Beatriz Santos Azevedo;beatriz@santos.com;IN2F0A;2023-05-16;eletrólitos;2-68;92
+482.928.940-63;Emilly Pinto Melo;emilly@pinto.com;1978-01-22;Avenida General San Martin, 1449;São Paulo;São Paulo;B000LXRJQ6;SP;Beatriz Santos Azevedo;beatriz@santos.com;IN2F0A;2023-05-16;tsh;25-80;21
+482.928.940-63;Emilly Pinto Melo;emilly@pinto.com;1978-01-22;Avenida General San Martin, 1449;São Paulo;São Paulo;B000LXRJQ6;SP;Beatriz Santos Azevedo;beatriz@santos.com;IN2F0A;2023-05-16;t4-livre;34-60;95
+482.928.940-63;Emilly Pinto Melo;emilly@pinto.com;1978-01-22;Avenida General San Martin, 1449;São Paulo;São Paulo;B000LXRJQ6;SP;Beatriz Santos Azevedo;beatriz@santos.com;IN2F0A;2023-05-16;ácido úrico;15-61;10
+317.210.450-82;Erick Barbosa Araujo;erick@barbosa.com;1980-08-21;Rua Oscar Freire, 2500;Goiânia;Goiás;B000UHP0YX;GO;Vitória Castro Rocha;vitoria@castro.com;42ZLUP;2023-05-24;hemácias;45-52;54
+317.210.450-82;Erick Barbosa Araujo;erick@barbosa.com;1980-08-21;Rua Oscar Freire, 2500;Goiânia;Goiás;B000UHP0YX;GO;Vitória Castro Rocha;vitoria@castro.com;42ZLUP;2023-05-24;leucócitos;9-61;24
+317.210.450-82;Erick Barbosa Araujo;erick@barbosa.com;1980-08-21;Rua Oscar Freire, 2500;Goiânia;Goiás;B000UHP0YX;GO;Vitória Castro Rocha;vitoria@castro.com;42ZLUP;2023-05-24;plaquetas;11-93;26
+317.210.450-82;Erick Barbosa Araujo;erick@barbosa.com;1980-08-21;Rua Oscar Freire, 2500;Goiânia;Goiás;B000UHP0YX;GO;Vitória Castro Rocha;vitoria@castro.com;42ZLUP;2023-05-24;hdl;19-75;87
+317.210.450-82;Erick Barbosa Araujo;erick@barbosa.com;1980-08-21;Rua Oscar Freire, 2500;Goiânia;Goiás;B000UHP0YX;GO;Vitória Castro Rocha;vitoria@castro.com;42ZLUP;2023-05-24;ldl;45-54;21
+317.210.450-82;Erick Barbosa Araujo;erick@barbosa.com;1980-08-21;Rua Oscar Freire, 2500;Goiânia;Goiás;B000UHP0YX;GO;Vitória Castro Rocha;vitoria@castro.com;42ZLUP;2023-05-24;vldl;48-72;76
+317.210.450-82;Erick Barbosa Araujo;erick@barbosa.com;1980-08-21;Rua Oscar Freire, 2500;Goiânia;Goiás;B000UHP0YX;GO;Vitória Castro Rocha;vitoria@castro.com;42ZLUP;2023-05-24;glicemia;25-83;86
+317.210.450-82;Erick Barbosa Araujo;erick@barbosa.com;1980-08-21;Rua Oscar Freire, 2500;Goiânia;Goiás;B000UHP0YX;GO;Vitória Castro Rocha;vitoria@castro.com;42ZLUP;2023-05-24;tgo;50-84;2
+317.210.450-82;Erick Barbosa Araujo;erick@barbosa.com;1980-08-21;Rua Oscar Freire, 2500;Goiânia;Goiás;B000UHP0YX;GO;Vitória Castro Rocha;vitoria@castro.com;42ZLUP;2023-05-24;tgp;38-63;84
+317.210.450-82;Erick Barbosa Araujo;erick@barbosa.com;1980-08-21;Rua Oscar Freire, 2500;Goiânia;Goiás;B000UHP0YX;GO;Vitória Castro Rocha;vitoria@castro.com;42ZLUP;2023-05-24;eletrólitos;2-68;90
+317.210.450-82;Erick Barbosa Araujo;erick@barbosa.com;1980-08-21;Rua Oscar Freire, 2500;Goiânia;Goiás;B000UHP0YX;GO;Vitória Castro Rocha;vitoria@castro.com;42ZLUP;2023-05-24;tsh;25-80;94
+317.210.450-82;Erick Barbosa Araujo;erick@barbosa.com;1980-08-21;Rua Oscar Freire, 2500;Goiânia;Goiás;B000UHP0YX;GO;Vitória Castro Rocha;vitoria@castro.com;42ZLUP;2023-05-24;t4-livre;34-60;35
+317.210.450-82;Erick Barbosa Araujo;erick@barbosa.com;1980-08-21;Rua Oscar Freire, 2500;Goiânia;Goiás;B000UHP0YX;GO;Vitória Castro Rocha;vitoria@castro.com;42ZLUP;2023-05-24;ácido úrico;15-61;94
+737.145.230-57;Guilherme Pereira Ribeiro;guilherme@pereira.com;1980-11-05;Rua Imperador Pedro Segundo, 376;Teresina;Piauí;B000K6HK8F;PI;Isabella Souza Carvalho;isabella@souza.com;OW62GK;2023-05-30;hemácias;45-52;50
+737.145.230-57;Guilherme Pereira Ribeiro;guilherme@pereira.com;1980-11-05;Rua Imperador Pedro Segundo, 376;Teresina;Piauí;B000K6HK8F;PI;Isabella Souza Carvalho;isabella@souza.com;OW62GK;2023-05-30;leucócitos;9-61;61
+737.145.230-57;Guilherme Pereira Ribeiro;guilherme@pereira.com;1980-11-05;Rua Imperador Pedro Segundo, 376;Teresina;Piauí;B000K6HK8F;PI;Isabella Souza Carvalho;isabella@souza.com;OW62GK;2023-05-30;plaquetas;11-93;77
+737.145.230-57;Guilherme Pereira Ribeiro;guilherme@pereira.com;1980-11-05;Rua Imperador Pedro Segundo, 376;Teresina;Piauí;B000K6HK8F;PI;Isabella Souza Carvalho;isabella@souza.com;OW62GK;2023-05-30;hdl;19-75;50
+737.145.230-57;Guilherme Pereira Ribeiro;guilherme@pereira.com;1980-11-05;Rua Imperador Pedro Segundo, 376;Teresina;Piauí;B000K6HK8F;PI;Isabella Souza Carvalho;isabella@souza.com;OW62GK;2023-05-30;ldl;45-54;84
+737.145.230-57;Guilherme Pereira Ribeiro;guilherme@pereira.com;1980-11-05;Rua Imperador Pedro Segundo, 376;Teresina;Piauí;B000K6HK8F;PI;Isabella Souza Carvalho;isabella@souza.com;OW62GK;2023-05-30;vldl;48-72;85
+737.145.230-57;Guilherme Pereira Ribeiro;guilherme@pereira.com;1980-11-05;Rua Imperador Pedro Segundo, 376;Teresina;Piauí;B000K6HK8F;PI;Isabella Souza Carvalho;isabella@souza.com;OW62GK;2023-05-30;glicemia;25-83;0
+737.145.230-57;Guilherme Pereira Ribeiro;guilherme@pereira.com;1980-11-05;Rua Imperador Pedro Segundo, 376;Teresina;Piauí;B000K6HK8F;PI;Isabella Souza Carvalho;isabella@souza.com;OW62GK;2023-05-30;tgo;50-84;61
+737.145.230-57;Guilherme Pereira Ribeiro;guilherme@pereira.com;1980-11-05;Rua Imperador Pedro Segundo, 376;Teresina;Piauí;B000K6HK8F;PI;Isabella Souza Carvalho;isabella@souza.com;OW62GK;2023-05-30;tgp;38-63;50
+737.145.230-57;Guilherme Pereira Ribeiro;guilherme@pereira.com;1980-11-05;Rua Imperador Pedro Segundo, 376;Teresina;Piauí;B000K6HK8F;PI;Isabella Souza Carvalho;isabella@souza.com;OW62GK;2023-05-30;eletrólitos;2-68;94
+737.145.230-57;Guilherme Pereira Ribeiro;guilherme@pereira.com;1980-11-05;Rua Imperador Pedro Segundo, 376;Teresina;Piauí;B000K6HK8F;PI;Isabella Souza Carvalho;isabella@souza.com;OW62GK;2023-05-30;tsh;25-80;84
+737.145.230-57;Guilherme Pereira Ribeiro;guilherme@pereira.com;1980-11-05;Rua Imperador Pedro Segundo, 376;Teresina;Piauí;B000K6HK8F;PI;Isabella Souza Carvalho;isabella@souza.com;OW62GK;2023-05-30;t4-livre;34-60;64
+737.145.230-57;Guilherme Pereira Ribeiro;guilherme@pereira.com;1980-11-05;Rua Imperador Pedro Segundo, 376;Teresina;Piauí;B000K6HK8F;PI;Isabella Souza Carvalho;isabella@souza.com;OW62GK;2023-05-30;ácido úrico;15-61;58
+575.918.000-27;Julia Souza Dias;julia@souza.com;1982-08-20;Praia de Flecheiras, 574;Maracanaú;Ceará;B0008BXKGI;CE;Murilo Barros Souza;murilo@barros.com;OYSAHH;2023-06-18;hemácias;45-52;43
+575.918.000-27;Julia Souza Dias;julia@souza.com;1982-08-20;Praia de Flecheiras, 574;Maracanaú;Ceará;B0008BXKGI;CE;Murilo Barros Souza;murilo@barros.com;OYSAHH;2023-06-18;leucócitos;9-61;89
+575.918.000-27;Julia Souza Dias;julia@souza.com;1982-08-20;Praia de Flecheiras, 574;Maracanaú;Ceará;B0008BXKGI;CE;Murilo Barros Souza;murilo@barros.com;OYSAHH;2023-06-18;plaquetas;11-93;98
+575.918.000-27;Julia Souza Dias;julia@souza.com;1982-08-20;Praia de Flecheiras, 574;Maracanaú;Ceará;B0008BXKGI;CE;Murilo Barros Souza;murilo@barros.com;OYSAHH;2023-06-18;hdl;19-75;87
+575.918.000-27;Julia Souza Dias;julia@souza.com;1982-08-20;Praia de Flecheiras, 574;Maracanaú;Ceará;B0008BXKGI;CE;Murilo Barros Souza;murilo@barros.com;OYSAHH;2023-06-18;ldl;45-54;49
+575.918.000-27;Julia Souza Dias;julia@souza.com;1982-08-20;Praia de Flecheiras, 574;Maracanaú;Ceará;B0008BXKGI;CE;Murilo Barros Souza;murilo@barros.com;OYSAHH;2023-06-18;vldl;48-72;18
+575.918.000-27;Julia Souza Dias;julia@souza.com;1982-08-20;Praia de Flecheiras, 574;Maracanaú;Ceará;B0008BXKGI;CE;Murilo Barros Souza;murilo@barros.com;OYSAHH;2023-06-18;glicemia;25-83;0
+575.918.000-27;Julia Souza Dias;julia@souza.com;1982-08-20;Praia de Flecheiras, 574;Maracanaú;Ceará;B0008BXKGI;CE;Murilo Barros Souza;murilo@barros.com;OYSAHH;2023-06-18;tgo;50-84;36
+575.918.000-27;Julia Souza Dias;julia@souza.com;1982-08-20;Praia de Flecheiras, 574;Maracanaú;Ceará;B0008BXKGI;CE;Murilo Barros Souza;murilo@barros.com;OYSAHH;2023-06-18;tgp;38-63;8
+575.918.000-27;Julia Souza Dias;julia@souza.com;1982-08-20;Praia de Flecheiras, 574;Maracanaú;Ceará;B0008BXKGI;CE;Murilo Barros Souza;murilo@barros.com;OYSAHH;2023-06-18;eletrólitos;2-68;29
+575.918.000-27;Julia Souza Dias;julia@souza.com;1982-08-20;Praia de Flecheiras, 574;Maracanaú;Ceará;B0008BXKGI;CE;Murilo Barros Souza;murilo@barros.com;OYSAHH;2023-06-18;tsh;25-80;40
+575.918.000-27;Julia Souza Dias;julia@souza.com;1982-08-20;Praia de Flecheiras, 574;Maracanaú;Ceará;B0008BXKGI;CE;Murilo Barros Souza;murilo@barros.com;OYSAHH;2023-06-18;t4-livre;34-60;59
+575.918.000-27;Julia Souza Dias;julia@souza.com;1982-08-20;Praia de Flecheiras, 574;Maracanaú;Ceará;B0008BXKGI;CE;Murilo Barros Souza;murilo@barros.com;OYSAHH;2023-06-18;ácido úrico;15-61;57
+099.549.170-47;Maria Araujo Oliveira;maria@araujo.com;1987-07-22;Rua Canto da Amizade, 37;Belo Horizonte;Minas Gerais;B0005HMXET;MG;Bruno Dias Araujo;bruno@dias.com;88SBUN;2023-11-07;hemácias;45-52;46
+099.549.170-47;Maria Araujo Oliveira;maria@araujo.com;1987-07-22;Rua Canto da Amizade, 37;Belo Horizonte;Minas Gerais;B0005HMXET;MG;Bruno Dias Araujo;bruno@dias.com;88SBUN;2023-11-07;leucócitos;8-61;12
+099.549.170-47;Maria Araujo Oliveira;maria@araujo.com;1987-07-22;Rua Canto da Amizade, 37;Belo Horizonte;Minas Gerais;B0005HMXET;MG;Bruno Dias Araujo;bruno@dias.com;88SBUN;2023-11-07;plaquetas;11-93;2
+099.549.170-47;Maria Araujo Oliveira;maria@araujo.com;1987-07-22;Rua Canto da Amizade, 37;Belo Horizonte;Minas Gerais;B0005HMXET;MG;Bruno Dias Araujo;bruno@dias.com;88SBUN;2023-11-07;hdl;19-75;7
+099.549.170-47;Maria Araujo Oliveira;maria@araujo.com;1987-07-22;Rua Canto da Amizade, 37;Belo Horizonte;Minas Gerais;B0005HMXET;MG;Bruno Dias Araujo;bruno@dias.com;88SBUN;2023-11-07;ldl;45-54;73
+099.549.170-47;Maria Araujo Oliveira;maria@araujo.com;1987-07-22;Rua Canto da Amizade, 37;Belo Horizonte;Minas Gerais;B0005HMXET;MG;Bruno Dias Araujo;bruno@dias.com;88SBUN;2023-11-07;vldl;48-72;82
+099.549.170-47;Maria Araujo Oliveira;maria@araujo.com;1987-07-22;Rua Canto da Amizade, 37;Belo Horizonte;Minas Gerais;B0005HMXET;MG;Bruno Dias Araujo;bruno@dias.com;88SBUN;2023-11-07;glicemia;25-83;23
+099.549.170-47;Maria Araujo Oliveira;maria@araujo.com;1987-07-22;Rua Canto da Amizade, 37;Belo Horizonte;Minas Gerais;B0005HMXET;MG;Bruno Dias Araujo;bruno@dias.com;88SBUN;2023-11-07;tgo;50-84;85
+099.549.170-47;Maria Araujo Oliveira;maria@araujo.com;1987-07-22;Rua Canto da Amizade, 37;Belo Horizonte;Minas Gerais;B0005HMXET;MG;Bruno Dias Araujo;bruno@dias.com;88SBUN;2023-11-07;tgp;38-63;87
+099.549.170-47;Maria Araujo Oliveira;maria@araujo.com;1987-07-22;Rua Canto da Amizade, 37;Belo Horizonte;Minas Gerais;B0005HMXET;MG;Bruno Dias Araujo;bruno@dias.com;88SBUN;2023-11-07;eletrólitos;2-68;90
+099.549.170-47;Maria Araujo Oliveira;maria@araujo.com;1987-07-22;Rua Canto da Amizade, 37;Belo Horizonte;Minas Gerais;B0005HMXET;MG;Bruno Dias Araujo;bruno@dias.com;88SBUN;2023-11-07;tsh;25-80;19
+099.549.170-47;Maria Araujo Oliveira;maria@araujo.com;1987-07-22;Rua Canto da Amizade, 37;Belo Horizonte;Minas Gerais;B0005HMXET;MG;Bruno Dias Araujo;bruno@dias.com;88SBUN;2023-11-07;t4-livre;34-60;38
+099.549.170-47;Maria Araujo Oliveira;maria@araujo.com;1987-07-22;Rua Canto da Amizade, 37;Belo Horizonte;Minas Gerais;B0005HMXET;MG;Bruno Dias Araujo;bruno@dias.com;88SBUN;2023-11-07;ácido úrico;15-61;64
+845.039.940-85;Luís Rocha Fernandes;luis@rocha.com;1987-12-22;Avenida Cruzeiro do Sul, 2641;Porto Alegre;Rio Grande do Sul;B000XHIA6M;RS;Thiago Cunha Ferreira;thiago@cunha.com;RZP8HN;2023-11-18;hemácias;45-52;62
+845.039.940-85;Luís Rocha Fernandes;luis@rocha.com;1987-12-22;Avenida Cruzeiro do Sul, 2641;Porto Alegre;Rio Grande do Sul;B000XHIA6M;RS;Thiago Cunha Ferreira;thiago@cunha.com;RZP8HN;2023-11-18;leucócitos;9-61;80
+845.039.940-85;Luís Rocha Fernandes;luis@rocha.com;1987-12-22;Avenida Cruzeiro do Sul, 2641;Porto Alegre;Rio Grande do Sul;B000XHIA6M;RS;Thiago Cunha Ferreira;thiago@cunha.com;RZP8HN;2023-11-18;plaquetas;11-93;28
+845.039.940-85;Luís Rocha Fernandes;luis@rocha.com;1987-12-22;Avenida Cruzeiro do Sul, 2641;Porto Alegre;Rio Grande do Sul;B000XHIA6M;RS;Thiago Cunha Ferreira;thiago@cunha.com;RZP8HN;2023-11-18;hdl;19-75;91
+845.039.940-85;Luís Rocha Fernandes;luis@rocha.com;1987-12-22;Avenida Cruzeiro do Sul, 2641;Porto Alegre;Rio Grande do Sul;B000XHIA6M;RS;Thiago Cunha Ferreira;thiago@cunha.com;RZP8HN;2023-11-18;ldl;45-54;67
+845.039.940-85;Luís Rocha Fernandes;luis@rocha.com;1987-12-22;Avenida Cruzeiro do Sul, 2641;Porto Alegre;Rio Grande do Sul;B000XHIA6M;RS;Thiago Cunha Ferreira;thiago@cunha.com;RZP8HN;2023-11-18;vldl;48-72;82
+845.039.940-85;Luís Rocha Fernandes;luis@rocha.com;1987-12-22;Avenida Cruzeiro do Sul, 2641;Porto Alegre;Rio Grande do Sul;B000XHIA6M;RS;Thiago Cunha Ferreira;thiago@cunha.com;RZP8HN;2023-11-18;glicemia;25-83;100
+845.039.940-85;Luís Rocha Fernandes;luis@rocha.com;1987-12-22;Avenida Cruzeiro do Sul, 2641;Porto Alegre;Rio Grande do Sul;B000XHIA6M;RS;Thiago Cunha Ferreira;thiago@cunha.com;RZP8HN;2023-11-18;tgo;50-84;41
+845.039.940-85;Luís Rocha Fernandes;luis@rocha.com;1987-12-22;Avenida Cruzeiro do Sul, 2641;Porto Alegre;Rio Grande do Sul;B000XHIA6M;RS;Thiago Cunha Ferreira;thiago@cunha.com;RZP8HN;2023-11-18;tgp;38-63;31
+845.039.940-85;Luís Rocha Fernandes;luis@rocha.com;1987-12-22;Avenida Cruzeiro do Sul, 2641;Porto Alegre;Rio Grande do Sul;B000XHIA6M;RS;Thiago Cunha Ferreira;thiago@cunha.com;RZP8HN;2023-11-18;eletrólitos;2-68;56
+845.039.940-85;Luís Rocha Fernandes;luis@rocha.com;1987-12-22;Avenida Cruzeiro do Sul, 2641;Porto Alegre;Rio Grande do Sul;B000XHIA6M;RS;Thiago Cunha Ferreira;thiago@cunha.com;RZP8HN;2023-11-18;tsh;25-80;100
+845.039.940-85;Luís Rocha Fernandes;luis@rocha.com;1987-12-22;Avenida Cruzeiro do Sul, 2641;Porto Alegre;Rio Grande do Sul;B000XHIA6M;RS;Thiago Cunha Ferreira;thiago@cunha.com;RZP8HN;2023-11-18;t4-livre;34-60;84
+845.039.940-85;Luís Rocha Fernandes;luis@rocha.com;1987-12-22;Avenida Cruzeiro do Sul, 2641;Porto Alegre;Rio Grande do Sul;B000XHIA6M;RS;Thiago Cunha Ferreira;thiago@cunha.com;RZP8HN;2023-11-18;ácido úrico;15-61;27
+821.068.780-87;Ryan Fernandes Melo;ryan@fernandes.com;1991-02-04;Rua Itália Biglia Massari, 40;Teresópolis;Rio de Janeiro;B000T046IX;RJ;José Ribeiro Souza;jose@ribeiro.com;WEVB6L;2023-12-29;hemácias;45-52;35
+821.068.780-87;Ryan Fernandes Melo;ryan@fernandes.com;1991-02-04;Rua Itália Biglia Massari, 40;Teresópolis;Rio de Janeiro;B000T046IX;RJ;José Ribeiro Souza;jose@ribeiro.com;WEVB6L;2023-12-29;leucócitos;9-61;6
+821.068.780-87;Ryan Fernandes Melo;ryan@fernandes.com;1991-02-04;Rua Itália Biglia Massari, 40;Teresópolis;Rio de Janeiro;B000T046IX;RJ;José Ribeiro Souza;jose@ribeiro.com;WEVB6L;2023-12-29;plaquetas;11-93;18
+821.068.780-87;Ryan Fernandes Melo;ryan@fernandes.com;1991-02-04;Rua Itália Biglia Massari, 40;Teresópolis;Rio de Janeiro;B000T046IX;RJ;José Ribeiro Souza;jose@ribeiro.com;WEVB6L;2023-12-29;hdl;19-75;56
+821.068.780-87;Ryan Fernandes Melo;ryan@fernandes.com;1991-02-04;Rua Itália Biglia Massari, 40;Teresópolis;Rio de Janeiro;B000T046IX;RJ;José Ribeiro Souza;jose@ribeiro.com;WEVB6L;2023-12-29;ldl;45-54;88
+821.068.780-87;Ryan Fernandes Melo;ryan@fernandes.com;1991-02-04;Rua Itália Biglia Massari, 40;Teresópolis;Rio de Janeiro;B000T046IX;RJ;José Ribeiro Souza;jose@ribeiro.com;WEVB6L;2023-12-29;vldl;48-72;30
+821.068.780-87;Ryan Fernandes Melo;ryan@fernandes.com;1991-02-04;Rua Itália Biglia Massari, 40;Teresópolis;Rio de Janeiro;B000T046IX;RJ;José Ribeiro Souza;jose@ribeiro.com;WEVB6L;2023-12-29;glicemia;25-83;6
+821.068.780-87;Ryan Fernandes Melo;ryan@fernandes.com;1991-02-04;Rua Itália Biglia Massari, 40;Teresópolis;Rio de Janeiro;B000T046IX;RJ;José Ribeiro Souza;jose@ribeiro.com;WEVB6L;2023-12-29;tgo;50-84;41
+821.068.780-87;Ryan Fernandes Melo;ryan@fernandes.com;1991-02-04;Rua Itália Biglia Massari, 40;Teresópolis;Rio de Janeiro;B000T046IX;RJ;José Ribeiro Souza;jose@ribeiro.com;WEVB6L;2023-12-29;tgp;38-63;100
+821.068.780-87;Ryan Fernandes Melo;ryan@fernandes.com;1991-02-04;Rua Itália Biglia Massari, 40;Teresópolis;Rio de Janeiro;B000T046IX;RJ;José Ribeiro Souza;jose@ribeiro.com;WEVB6L;2023-12-29;eletrólitos;2-68;11
+821.068.780-87;Ryan Fernandes Melo;ryan@fernandes.com;1991-02-04;Rua Itália Biglia Massari, 40;Teresópolis;Rio de Janeiro;B000T046IX;RJ;José Ribeiro Souza;jose@ribeiro.com;WEVB6L;2023-12-29;tsh;25-80;79
+821.068.780-87;Ryan Fernandes Melo;ryan@fernandes.com;1991-02-04;Rua Itália Biglia Massari, 40;Teresópolis;Rio de Janeiro;B000T046IX;RJ;José Ribeiro Souza;jose@ribeiro.com;WEVB6L;2023-12-29;t4-livre;34-60;39
+821.068.780-87;Ryan Fernandes Melo;ryan@fernandes.com;1991-02-04;Rua Itália Biglia Massari, 40;Teresópolis;Rio de Janeiro;B000T046IX;RJ;José Ribeiro Souza;jose@ribeiro.com;WEVB6L;2023-12-29;ácido úrico;15-61;52
+741.560.520-95;Thaís Martins Costa;thais@martins.com;1995-11-12;Rua Saturnino Ramos, 119;Campo Grande;Mato Grosso do Sul;B000JDT2K4;MS;Sarah Cardoso Dias;sarah@cardoso.com;LN6KN2;2024-03-10;hemácias;45-52;76
+741.560.520-95;Thaís Martins Costa;thais@martins.com;1995-11-12;Rua Saturnino Ramos, 119;Campo Grande;Mato Grosso do Sul;B000JDT2K4;MS;Sarah Cardoso Dias;sarah@cardoso.com;LN6KN2;2024-03-10;leucócitos;9-61;97
+741.560.520-95;Thaís Martins Costa;thais@martins.com;1995-11-12;Rua Saturnino Ramos, 119;Campo Grande;Mato Grosso do Sul;B000JDT2K4;MS;Sarah Cardoso Dias;sarah@cardoso.com;LN6KN2;2024-03-10;plaquetas;11-93;1
+741.560.520-95;Thaís Martins Costa;thais@martins.com;1995-11-12;Rua Saturnino Ramos, 119;Campo Grande;Mato Grosso do Sul;B000JDT2K4;MS;Sarah Cardoso Dias;sarah@cardoso.com;LN6KN2;2024-03-10;hdl;19-75;83
+741.560.520-95;Thaís Martins Costa;thais@martins.com;1995-11-12;Rua Saturnino Ramos, 119;Campo Grande;Mato Grosso do Sul;B000JDT2K4;MS;Sarah Cardoso Dias;sarah@cardoso.com;LN6KN2;2024-03-10;ldl;45-54;67
+741.560.520-95;Thaís Martins Costa;thais@martins.com;1995-11-12;Rua Saturnino Ramos, 119;Campo Grande;Mato Grosso do Sul;B000JDT2K4;MS;Sarah Cardoso Dias;sarah@cardoso.com;LN6KN2;2024-03-10;vldl;48-72;82
+741.560.520-95;Thaís Martins Costa;thais@martins.com;1995-11-12;Rua Saturnino Ramos, 119;Campo Grande;Mato Grosso do Sul;B000JDT2K4;MS;Sarah Cardoso Dias;sarah@cardoso.com;LN6KN2;2024-03-10;glicemia;25-83;25
+741.560.520-95;Thaís Martins Costa;thais@martins.com;1995-11-12;Rua Saturnino Ramos, 119;Campo Grande;Mato Grosso do Sul;B000JDT2K4;MS;Sarah Cardoso Dias;sarah@cardoso.com;LN6KN2;2024-03-10;tgo;50-84;44
+741.560.520-95;Thaís Martins Costa;thais@martins.com;1995-11-12;Rua Saturnino Ramos, 119;Campo Grande;Mato Grosso do Sul;B000JDT2K4;MS;Sarah Cardoso Dias;sarah@cardoso.com;LN6KN2;2024-03-10;tgp;38-63;15
+741.560.520-95;Thaís Martins Costa;thais@martins.com;1995-11-12;Rua Saturnino Ramos, 119;Campo Grande;Mato Grosso do Sul;B000JDT2K4;MS;Sarah Cardoso Dias;sarah@cardoso.com;LN6KN2;2024-03-10;eletrólitos;2-68;9
+741.560.520-95;Thaís Martins Costa;thais@martins.com;1995-11-12;Rua Saturnino Ramos, 119;Campo Grande;Mato Grosso do Sul;B000JDT2K4;MS;Sarah Cardoso Dias;sarah@cardoso.com;LN6KN2;2024-03-10;tsh;25-80;3
+741.560.520-95;Thaís Martins Costa;thais@martins.com;1995-11-12;Rua Saturnino Ramos, 119;Campo Grande;Mato Grosso do Sul;B000JDT2K4;MS;Sarah Cardoso Dias;sarah@cardoso.com;LN6KN2;2024-03-10;t4-livre;34-60;23
+741.560.520-95;Thaís Martins Costa;thais@martins.com;1995-11-12;Rua Saturnino Ramos, 119;Campo Grande;Mato Grosso do Sul;B000JDT2K4;MS;Sarah Cardoso Dias;sarah@cardoso.com;LN6KN2;2024-03-10;ácido úrico;15-61;73
