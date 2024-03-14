@@ -101,6 +101,7 @@ describe 'Rebase Labs API' do
 
         get "/exams/#{daniela_exam.token}"
 
+        expect(last_response.status).to eq 200
         json_body = JSON.parse last_response.body
 
         expect(last_response.status).to eq 200
@@ -114,8 +115,24 @@ describe 'Rebase Labs API' do
     end
 
     context 'sem sucesso' do
-      it 'com token inexistente'
-      it 'com erro de servidor'
+      it 'com token inexistente' do
+        get '/exams/NONEXISTENT'
+        json_response = JSON.parse last_response.body
+
+        expect(last_response.status).to eq 404
+        expect(json_response['errors']).to include 'Exame não encontrado'
+      end
+
+      it 'com erro de servidor' do
+        repository_double = double 'exams_repository_double'
+        allow(ExamsRepository).to receive(:new).and_return(repository_double)
+        allow(repository_double).to receive(:fetch_by_token).and_raise(PG::Error)
+        get '/exams/ANYTOKEN'
+        json_response = JSON.parse last_response.body
+
+        expect(last_response.status).to eq 500
+        expect(json_response['errors']).to include 'Erro interno de servidor'
+      end
     end
   end
 end

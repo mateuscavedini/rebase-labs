@@ -17,7 +17,11 @@ class ExamsService
   end
 
   def fetch_by_token(token:, close_conn: true)
-    row = @repository.fetch_by_token(token: token, close_conn: close_conn).first
+    result = @repository.fetch_by_token(token: token, close_conn: close_conn)
+
+    return { errors: ['Exame não encontrado'] }.to_json if result.num_tuples.zero?
+
+    row = result.first
     {
       token: row['token'],
       date: row['date'],
@@ -25,6 +29,8 @@ class ExamsService
       doctor: JSON.parse(row['doctor']),
       tests: JSON.parse(row['tests'])
     }.to_json
+  rescue PG::Error
+    { errors: ['Erro interno de servidor'] }.to_json
   end
 
   def batch_insert(batch:, close_conn: true)

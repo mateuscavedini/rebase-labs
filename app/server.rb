@@ -13,7 +13,13 @@ class Server < Sinatra::Base
 
   get '/exams/:token' do
     content_type :json
-    ExamsService.new.fetch_by_token token: params['token']
+    result = ExamsService.new.fetch_by_token token: params['token']
+
+    status 200 unless result.include? 'errors'
+    status 404 if result.include? 'Exame não encontrado'
+    status 500 if result.include? 'Erro interno de servidor'
+
+    result
   end
 
   get '/exams' do
