@@ -66,7 +66,8 @@ const handleExamsListing = () => {
         setupTableBodyRow(rowValues);
       });
     })
-    .catch((err) => console.log(err));
+    .catch((err) => console.log(err))
+    .finally(() => searchInput.value = "");
 };
 
 const handleSearchFormSubmit = (e) => {
