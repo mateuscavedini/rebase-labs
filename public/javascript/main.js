@@ -1,10 +1,11 @@
 const pageHeading = document.getElementById("page-heading");
 const tableHeaderRow = document.getElementById("table-header-row");
 const tableBody = document.getElementById("table-body");
-const alertDiv = document.getElementById("alert");
 const backButton = document.getElementById("back-btn");
 const searchButton = document.getElementById("search-btn");
 const searchInput = document.getElementById("token-input");
+const importButton = document.getElementById("import-btn");
+const importInput = document.getElementById("import-input");
 
 const setupTableHeaders = (headers) => {
   headers.forEach((header) => {
@@ -31,7 +32,6 @@ const setupTableBodyRow = (values) => {
 const resetPage = () => {
   tableHeaderRow.replaceChildren();
   tableBody.replaceChildren();
-  alertDiv.classList.add("not-displayed");
   backButton.classList.add("not-displayed");
 };
 
@@ -67,7 +67,7 @@ const handleExamsListing = () => {
       });
     })
     .catch((err) => console.log(err))
-    .finally(() => searchInput.value = "");
+    .finally(() => (searchInput.value = ""));
 };
 
 const handleSearchFormSubmit = (e) => {
@@ -81,8 +81,8 @@ const handleSearchFormSubmit = (e) => {
       pageHeading.textContent = `Resultado por: ${token}`;
 
       if (data.errors) {
-        alertDiv.textContent = data.errors;
-        alertDiv.classList.remove("not-displayed");
+        window.alert(data.errors);
+        handleExamsListing();
         return;
       }
 
@@ -95,11 +95,37 @@ const handleSearchFormSubmit = (e) => {
 
         setupTableBodyRow(rowValues);
       });
+
+      backButton.classList.remove("not-displayed");
     })
-    .catch((err) => console.log(err))
-    .finally(() => backButton.classList.remove("not-displayed"));
+    .catch((err) => console.log(err));
+};
+
+const handleImportFormSubmit = (e) => {
+  e.preventDefault();
+  const file = importInput.files[0];
+  const formData = new FormData();
+  formData.append("file", file);
+
+  fetch("/upload", {
+    method: "POST",
+    body: formData,
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      if (data.errors) {
+        window.alert(windowText);
+        handleExamsListing();
+        return;
+      }
+
+      window.alert(data.message);
+      location.reload();
+    })
+    .catch((err) => console.log(err));
 };
 
 searchButton.addEventListener("click", (e) => handleSearchFormSubmit(e));
+importButton.addEventListener("click", (e) => handleImportFormSubmit(e));
 backButton.addEventListener("click", handleExamsListing);
 handleExamsListing();

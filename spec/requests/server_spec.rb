@@ -135,4 +135,45 @@ describe 'Rebase Labs API' do
       end
     end
   end
+
+  context 'POST /upload' do
+    context 'deve importar dados do arquivo para o banco de dados' do
+      it 'com sucesso' do
+        uploaded_file = Rack::Test::UploadedFile.new(File.join('spec/support/csv', 'upload_test_file.csv'))
+
+        post '/upload', { file: uploaded_file }
+        json_response = JSON.parse last_response.body
+
+        expect(last_response.status).to eq 201
+        expect(last_response.content_type).to eq 'application/json'
+        expect(json_response['message']).to eq 'Dados salvos com sucesso!'
+      end
+
+      context 'sem sucesso' do
+        it 'com erro de servidor' do
+          uploaded_file = Rack::Test::UploadedFile.new(File.join('spec/support/csv', 'upload_test_file.csv'))
+
+          allow(PatientsService).to receive(:new).and_raise(PG::Error)
+          post '/upload', { file: uploaded_file }
+          json_response = JSON.parse last_response.body
+
+          expect(last_response.status).to eq 500
+          expect(last_response.content_type).to eq 'application/json'
+          expect(json_response['errors']).to include 'Erro interno de servidor'
+        end
+
+        it 'com erro na leitura do arquivo' do
+          uploaded_file = Rack::Test::UploadedFile.new(File.join('spec/support/csv', 'upload_test_file.csv'))
+
+          allow(UploadService).to receive(:read).and_raise(CSV::MalformedCSVError::new nil, nil)
+          post '/upload', { file: uploaded_file }
+          json_response = JSON.parse last_response.body
+
+          expect(last_response.status).to eq 422
+          expect(last_response.content_type).to eq 'application/json'
+          expect(json_response['errors']).to include 'Erro ao ler o arquivo'
+        end
+      end
+    end
+  end
 end

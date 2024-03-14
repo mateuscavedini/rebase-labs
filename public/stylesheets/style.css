@@ -36,6 +36,17 @@ input {
   padding: 0.25rem 0.5rem;
 }
 
+#file-import-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+#import-input {
+  padding: 0;
+}
+
 #back-btn {
   margin-top: 0.5rem;
 }
@@ -44,7 +55,8 @@ input {
   display: none;
 }
 
-.btn {
+.btn,
+#file-upload-button {
   font-size: 0.95rem;
   padding: 0.25rem 0.5rem;
 }

@@ -9,15 +9,24 @@
 <body>
   <h1 id="page-heading"></h1>
 
-  <form>
+  <form id="import-form">
+    <label for="file-input">Importar arquivo</label>
+    <div id="file-import-container">
+      <input id="import-input", type="file" name="file"/>
+      <button id="import-btn" type="submit" class="btn">Importar</button>
+    </div>
+  </form>
+
+  <form id="search-form">
     <label for="token-input">Busque por Token</label>
     <div>
-      <input id="token-input" type="text" name="token" placeholder="ABC123..."></input>
+      <input id="token-input" type="text" name="token" placeholder="ABC123..."/>
       <button id="search-btn" type="submit" class="btn">Buscar</button>
     </div>
   </form>
 
   <div id="alert" class="not-displayed"></div>
+  <div id="notice" class="not-displayed"></div>
 
   <div id="table-container">
     <table id="exams-table">
