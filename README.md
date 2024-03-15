@@ -1,6 +1,6 @@
 # Rebase Labs
 
-Uma app web para listagem de exames médicos.
+Uma app web para listagem de exames médicos, sem utilizar Rails.
 
 ## Tech Stack
 
@@ -19,7 +19,7 @@ git clone git@github.com:mateuscavedini/rebase-labs.git
 cd rebase-labs/
 ```
 
-2. Inicie os containeres.
+2. Inicie os containers.
 
 ```shell
 docker compose up -d
@@ -37,7 +37,7 @@ docker compose exec api rake db:import
 docker compose exec api rspec
 ```
 
-5. Pare os containeres.
+5. Quando finalizado, pare os containers.
 
 ```shell
 docker compose down
@@ -105,7 +105,7 @@ GET /exams/:token
 }
 ```
 
-Exibe os detalhes de um exame.
+Exibe mais detalhes de um exame.
 
 ---
 
@@ -115,13 +115,15 @@ POST /import
 
 Recebe um arquivo .csv para importar os dados de forma assíncrona para o banco de dados.
 
+> Obs: Um arquivo para testar o upload se encontra em spec/support/csv.
+
 ## Frontend
 
 ```http
 GET /hello
 ```
 
-Exibe uim texto plano para indicar o funcionamento do servidor.
+Exibe um texto plano para indicar o funcionamento do servidor.
 
 ---
 
@@ -132,3 +134,5 @@ GET /
 Esta rota serve os arquivos do frontend, implementando os endpoints anteriores.
 
 > Obs: Até o momento, a aplicação não foi dividida em frontend/backend. Portanto, o mesmo servidor que serve os endpoints é o mesmo que serve o html.
+
+> Obs2: O frontend se encontra sem testes. :(
