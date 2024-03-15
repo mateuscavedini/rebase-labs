@@ -1,15 +1,20 @@
 services:
-  api:
+  api: &api
+    container_name: api
     build: .
     volumes:
       - .:/app
       - rubygems:/usr/local/bundle
     ports:
       - 4567:4567
+    environment:
+      - REDIS_URL=redis://redis:6379/0
     depends_on:
       - postgres
+      - redis
 
   postgres:
+    container_name: postgres
     image: postgres
     volumes:
       - database:/var/lib/postgresql/data
@@ -18,6 +23,16 @@ services:
       POSTGRES_PASSWORD: postgres
     ports:
       - 5432:5432
+
+  sidekiq:
+    container_name: sidekiq
+    <<: *api
+    ports: []
+    command: sidekiq -r ./app/jobs/import_csv_job.rb
+
+  redis:
+    container_name: redis
+    image: redis
 
 volumes:
   rubygems:

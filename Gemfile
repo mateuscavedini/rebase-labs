@@ -7,6 +7,7 @@ gem 'pg'
 gem 'puma'
 gem 'rackup'
 gem 'rake'
+gem 'sidekiq'
 gem 'sinatra'
 
 group :test do
