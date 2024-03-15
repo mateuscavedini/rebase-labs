@@ -14,7 +14,7 @@ class Doctor
   end
 
   def self.new_from_row(row)
-    new name: row['nome médico'], email: row['email médico'],
-        crm: row['crm médico'], crm_state: row['crm médico estado']
+    new name: row[9], email: row[10],
+        crm: row[7], crm_state: row[8]
   end
 end

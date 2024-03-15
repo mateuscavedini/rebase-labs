@@ -14,7 +14,7 @@ class Test
   end
 
   def self.new_from_row(row)
-    new type: row['tipo exame'], limits: row['limites tipo exame'],
-        result: row['resultado tipo exame'], exam_token: row['token resultado exame']
+    new type: row[13], limits: row[14],
+        result: row[15], exam_token: row[11]
   end
 end

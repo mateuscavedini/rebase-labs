@@ -17,8 +17,8 @@ class Patient
   end
 
   def self.new_from_row(row)
-    new cpf: row['cpf'], name: row['nome paciente'], email: row['email paciente'],
-        birthday: row['data nascimento paciente'], address: row['endereço/rua paciente'],
-        city: row['cidade paciente'], state: row['estado paciente']
+    new cpf: row[0], name: row[1], email: row[2],
+        birthday: row[3], address: row[4],
+        city: row[5], state: row[6]
   end
 end

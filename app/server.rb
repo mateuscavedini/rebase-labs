@@ -3,7 +3,7 @@
 require 'csv'
 require 'sinatra'
 require './app/services/exams_service'
-require './app/services/upload_service'
+require './app/jobs/import_csv_job'
 
 class Server < Sinatra::Base
   set :public_folder, File.dirname(__FILE__) + '/../public'
@@ -32,27 +32,22 @@ class Server < Sinatra::Base
   post '/upload' do
     content_type :json
 
-    if params[:file].eql? 'undefined'
+    if params.empty? || params[:file].eql?('undefined')
       status 422
-      return { errors: ['Insira um arquivo válido'] }.to_json
+      return { errors: ['Insira um arquivo'] }.to_json
     end
 
     tempfile = params[:file][:tempfile]
-    UploadService.import file: tempfile
+    rows = CSV.read tempfile, col_sep: ';'
+
+    ImportCsvJob.perform_async rows
 
     status 201
-    { message: 'Dados salvos com sucesso!' }.to_json
-  rescue CSV::MalformedCSVError
-    status 422
-    { errors: ['Erro ao ler o arquivo'] }.to_json
-  rescue PG::Error
-    status 500
-    { errors: ['Erro interno de servidor'] }.to_json
+    { message: 'Os dados do arquivo estão sendo processados!' }.to_json
   end
 
   get '/' do
     content_type 'text/html'
     File.open(File.join('public', 'index.html'))
   end
-
 end

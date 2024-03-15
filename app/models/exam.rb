@@ -15,7 +15,7 @@ class Exam
   end
 
   def self.new_from_row(row)
-    new token: row['token resultado exame'], date: row['data exame'], patient_cpf: row['cpf'],
-        doctor_crm: row['crm médico'], doctor_crm_state: row['crm médico estado']
+    new token: row[11], date: row[12], patient_cpf: row[0],
+        doctor_crm: row[7], doctor_crm_state: row[8]
   end
 end

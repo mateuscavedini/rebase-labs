@@ -11,17 +11,14 @@ require './app/models/exam'
 require './app/models/test'
 
 class UploadService
-  def self.read(file:)
-    CSV.read file, col_sep: ';', headers: true
-  end
-
-  def self.import(file:, conn: nil)
+  def self.import(rows:, conn: nil)
     conn ||= DatabaseService.connection
-    rows = read file: file
     patients = []
     doctors = []
     exams = []
     tests = []
+
+    rows.shift
 
     rows.each do |row|
       patients << Patient.new_from_row(row)
