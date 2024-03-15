@@ -19,51 +19,116 @@ git clone git@github.com:mateuscavedini/rebase-labs.git
 cd rebase-labs/
 ```
 
-2. Inicie o banco de dados e a aplicação.
+2. Inicie os containeres.
 
 ```shell
-docker compose up
+docker compose up -d
 ```
 
-3. Importe os dados do arquivo CSV para o banco de dados.
+3. Inicialize o banco de dados e importe os dados iniciais.
 
 ```shell
-docker exec -t rebase-labs-api-1 sh -c "rake db:import"
+docker compose exec api rake db:import
 ```
 
 4. Execute os testes.
 
 ```shell
-docker exec rebase-labs-api-1 rspec
+docker compose exec api rspec
+```
+
+5. Pare os containeres.
+
+```shell
+docker compose down
 ```
 
 ## Endpoints
 
 ```http
-GET /tests
+GET /exams
 ```
 
 ```json
 [
     {
-        "id": "1",
-        "cpf": "048.973.170-88",
-        "nome_paciente": "Emilly Batista Neto",
-        "email_paciente": "gerald.crona@ebert-quigley.com",
-        "data_nascimento_paciente": "2001-03-11",
-        "endereco_rua_paciente": "165 Rua Rafaela",
-        "cidade_paciente": "Ituverava",
-        "estado_paciente": "Alagoas",
-        "crm_medico": "B000BJ20J4",
-        "crm_medico_estado": "PI",
-        "nome_medico": "Maria Luiza Pires",
-        "email_medico": "denna@wisozk.biz",
-        "token_resultado_exame": "IQCZ17",
-        "data_exame": "2021-08-05",
-        "tipo_exame": "hemácias",
-        "limites_tipo_exame": "45-52",
-        "resultado_tipo_exame": "97"
+        "token": "IQCZ17",
+        "date": "2021-08-05",
+        "patient": {
+            "cpf": "048.973.170-88",
+            "name": "Emilly Batista Neto"
+        },
+        "doctor": {
+            "name": "Maria Luiza Pires",
+            "crm": "B000BJ20J4",
+            "crm_state": "PI",
+        }
     }
     "..."
 ]
 ```
+
+Lista todos os exames cadatrados, assim como seus respectivos pacientes e médicos.
+
+---
+
+```http
+GET /exams/:token
+```
+
+```json
+{
+    "token": "LN6KN2",
+    "date": "2024-03-10",
+    "patient": {
+        "name": "Thaís Martins Costa",
+        "cpf": "741.560.520-95"
+    },
+    "doctor": {
+        "name": "Sarah Cardoso Dias",
+        "crm": "B000JDT2K4",
+        "crm_state": "MS"
+    },
+    "tests": [
+        {
+            "type": "glicemia",
+            "limits": "25-83",
+            "result": "25"
+        },
+        {
+            "type": "hdl",
+            "limits": "19-75",
+            "result": "83"
+        }
+        "..."
+    ]
+}
+```
+
+Exibe os detalhes de um exame.
+
+---
+
+```http
+POST /import
+```
+
+Recebe um arquivo .csv para importar os dados de forma assíncrona para o banco de dados.
+
+## Frontend
+
+```http
+GET /hello
+```
+
+Exibe uim texto plano para indicar o funcionamento do servidor.
+
+---
+
+```http
+GET /
+```
+
+Esta rota serve os arquivos do frontend, implementando os endpoints anteriores.
+
+> Obs: Até o momento, a aplicação não foi dividida em frontend/backend. Portanto, o mesmo servidor que serve os endpoints é o mesmo que serve o html.
